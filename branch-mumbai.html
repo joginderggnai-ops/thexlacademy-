@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mumbai Centre — The XL Academy</title>
+<meta name="description" content="The XL Academy Mumbai — Data Science, Analytics & MIS training in India's financial capital. Online & Offline batches near Andheri, BKC & Navi Mumbai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.course-hero{background:linear-gradient(to right,rgba(8,16,72,.96) 0%,rgba(8,16,72,.88) 38%,rgba(8,16,72,.5) 62%,rgba(8,16,72,.1) 80%,transparent 100%),url('images/mumbai.png');background-size:cover;background-position:center right;background-repeat:no-repeat;min-height:480px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact-card h4{font-size:17px;margin-bottom:18px;color:var(--navy)}
+.contact-row{display:flex;gap:12px;margin-bottom:16px;font-size:14px;color:var(--muted);align-items:flex-start}
+.contact-row .ci{font-size:20px;flex-shrink:0;width:30px;text-align:center;margin-top:1px}
+.contact-row strong{color:var(--ink);display:block;font-weight:600;font-size:14px;margin-bottom:2px}
+.contact-row:last-child{margin-bottom:0}
+.batch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.batch-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;transition:.2s}
+.batch-card:hover{border-color:var(--orange);box-shadow:var(--shadow);transform:translateY(-4px)}
+.batch-type{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.batch-time{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.batch-days{font-size:13px;color:var(--muted);margin-bottom:12px}
+.batch-badge.avail{display:inline-block;background:#e6f9ee;border:1px solid #b2e8c9;border-radius:50px;padding:3px 13px;font-size:12px;color:#157a3c}
+.reach-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.reach-card h4{font-size:17px;margin-bottom:18px;color:var(--navy)}
+.reach-steps{list-style:none;display:grid;gap:12px}
+.reach-step{display:flex;gap:12px;align-items:flex-start}
+.reach-num{width:28px;height:28px;min-width:28px;background:var(--navy);color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.reach-text{font-size:14px;color:var(--muted);line-height:1.55;padding-top:4px}
+.map-cta{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:14px;font-weight:600;color:var(--orange-d);border:1.5px solid var(--orange-d);border-radius:50px;padding:8px 18px;transition:.2s}
+.map-cta:hover{background:var(--orange-d);color:#fff}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.batch-grid{grid-template-columns:1fr}}
+</style>
+<link rel="icon" type="image/png" href="images/fav.png"><link rel="apple-touch-icon" href="images/fav.png">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="course-hero">
+  <div class="container">
+    <div style="max-width:560px">
+      <nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Branches</span><span class="sep">›</span><span>Mumbai</span></nav>
+      <div class="rating" style="color:var(--gold);font-size:15px">★★★★★ <span style="color:rgba(255,255,255,.6);font-weight:400">Highly Rated Centre</span></div>
+      <h1>Mumbai<br>Centre</h1>
+      <p class="course-hero-sub">Mumbai is India's financial and commercial capital — home to the country's biggest banks, NBFCs, insurance firms, media companies, and e-commerce giants. Analytics skills open the most doors here.</p>
+      <div class="qbadges">
+        <span class="qbadge">📍 <b>Mumbai, Maharashtra</b></span>
+        <span class="qbadge">🖥 <b>Online &amp; Offline</b></span>
+        <span class="qbadge">🎓 <b>4 Programs</b></span>
+        <span class="qbadge">🏦 <b>BFSI &amp; Finance Hub</b></span>
+      </div>
+      <div class="course-hero-actions">
+        <button class="btn btn-primary" onclick="openModal()">Book Free Demo Class</button>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-strip">
+  <div class="container" style="padding-top:0;padding-bottom:0">
+    <div class="info-strip-inner">
+      <div class="info-item"><div class="info-ic">📚</div><div><div class="info-val">4 Programs</div><div class="info-lbl">Available Courses</div></div></div>
+      <div class="info-item"><div class="info-ic">🖥</div><div><div class="info-val">Online &amp; Offline</div><div class="info-lbl">Training Modes</div></div></div>
+      <div class="info-item"><div class="info-ic">🕐</div><div><div class="info-val">3 Batch Slots</div><div class="info-lbl">Morning / Evening / Weekend</div></div></div>
+      <div class="info-item"><div class="info-ic">🚀</div><div><div class="info-val">New Batch Soon</div><div class="info-lbl">Limited Seats Available</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Study in Mumbai</span>
+      <h2>India's Financial Capital — Where Analytics Meets BFSI</h2>
+      <p>Mumbai's BFSI (Banking, Financial Services, Insurance) sector is the single largest employer of analytics professionals in India — and it's all here.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feature"><div class="ic">🏦</div><h3>BFSI Powerhouse</h3><p>HDFC Bank, ICICI Bank, SBI, Axis Bank, Kotak, Reliance Capital — Mumbai's BFSI sector hires more MIS, reporting, and data analytics professionals than any other industry cluster in India.</p></div>
+      <div class="feature"><div class="ic">📦</div><h3>E-commerce &amp; Retail Analytics</h3><p>Amazon India, Myntra, Meesho, Nykaa — many have Mumbai-based analytics hubs focused on customer behaviour, demand forecasting, and supply chain data — all ideal for our graduates.</p></div>
+      <div class="feature"><div class="ic">🎬</div><h3>Media &amp; OTT Analytics</h3><p>Netflix India, Disney+ Hotstar, Sony LIV, and major media conglomerates operate from Mumbai — creating a unique pool of content analytics, audience segmentation, and ad-tech roles.</p></div>
+      <div class="feature"><div class="ic">🌊</div><h3>Financial Markets Data</h3><p>BSE, NSE, and India's largest financial services firms create constant demand for Excel-level MIS reporting, Python-based risk analytics, and real-time data dashboarding professionals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section courses" id="courses">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Available at This Centre</span><h2>All 4 Programs — Available in Mumbai</h2><p>Full curriculum, same instructors, same placement support — designed for Mumbai's diverse and demanding hiring market.</p></div>
+    <div class="course-grid">
+      <div class="course"><div class="thumb">📊</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>Data Analytics with Python</h3><div class="sub">Excel, SQL, Python, Power BI, Tableau</div><ul><li><b>Duration</b> 6 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Data / Marketing Analyst</li></ul><a href="data-analytics-python" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">🤖</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>Data Science with ML</h3><div class="sub">Python, Statistics, ML, Deep Learning</div><ul><li><b>Duration</b> 8 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Data Scientist / ML Engineer</li></ul><a href="data-science" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">📈</div><div class="body"><div class="rating">★★★★★ <span>4.5 / 5</span></div><h3>Data Analytics</h3><div class="sub">Advanced Excel, SQL, Power BI, Tableau</div><ul><li><b>Duration</b> 4 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Business / Operations Analyst</li></ul><a href="data-analytics" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">🗂️</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>MIS &amp; Reporting</h3><div class="sub">Advanced Excel, SQL, Power BI, VBA</div><ul><li><b>Duration</b> 4 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> MIS Executive / Reporting Analyst</li></ul><a href="mis-reporting" class="btn btn-outline">Explore Program</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-soft);padding-top:0">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Batch Schedule</span><h2>Choose a Timing That Works for You</h2><p>Designed for Mumbai's busy professionals — early morning and late evening slots to work around commutes.</p></div>
+    <div class="batch-grid">
+      <div class="batch-card"><div class="batch-type">Morning Batch</div><div class="batch-time">7:00 AM<br>– 9:00 AM</div><div class="batch-days">Monday to Friday</div><div class="batch-badge avail">Seats Available</div></div>
+      <div class="batch-card"><div class="batch-type">Evening Batch</div><div class="batch-time">7:30 PM<br>– 9:30 PM</div><div class="batch-days">Monday to Friday</div><div class="batch-badge avail">Seats Available</div></div>
+      <div class="batch-card"><div class="batch-type">Weekend Batch</div><div class="batch-time">9:00 AM<br>– 1:00 PM</div><div class="batch-days">Saturday &amp; Sunday</div><div class="batch-badge avail">Seats Available</div></div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:14px;color:var(--muted)">Online batches available on the same schedule. <a href="#" onclick="openModal();return false;" style="color:var(--orange-d);font-weight:600">Contact us</a> for the next start date.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Find Us</span><h2>Location &amp; How to Reach</h2><p>Our Mumbai centre is centrally located for students from both Western and Harbour Lines.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>📍 Centre Address</h4>
+        <div class="contact-row"><span class="ci">📍</span><div><strong>City</strong>Mumbai, Maharashtra</div></div>
+        <div class="contact-row"><span class="ci">🏢</span><div><strong>Area</strong>Andheri / BKC / Navi Mumbai area — contact us for the exact address and landmark after registration.</div></div>
+        <div class="contact-row"><span class="ci">🚇</span><div><strong>Nearest Metro</strong>Mumbai Metro Line 1 (Versova–Andheri–Ghatkopar) and suburban rail Western/Central Lines. Contact us for the closest station.</div></div>
+        <div class="contact-row"><span class="ci">📞</span><div><strong>Phone</strong><a href="tel:+917303609096" style="color:var(--orange-d)">+91 73036 09096</a></div></div>
+        <div class="contact-row"><span class="ci">✉</span><div><strong>Email</strong><a href="mailto:support@thexlacademy.com" style="color:var(--orange-d)">support@thexlacademy.com</a></div></div>
+        <div class="contact-row"><span class="ci">🕐</span><div><strong>Hours</strong>Monday – Saturday, 8:00 AM – 9:00 PM</div></div>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="map-cta">💬 Get Address on WhatsApp</a>
+      </div>
+      <div class="reach-card">
+        <h4>🚇 How to Reach Us</h4>
+        <ul class="reach-steps">
+          <li class="reach-step"><span class="reach-num">1</span><span class="reach-text"><strong style="color:var(--navy)">By Metro</strong> — Mumbai Metro Line 1 and the expanding Metro 2A/7 network cover Andheri and nearby areas well. Contact us for the closest station to the centre.</span></li>
+          <li class="reach-step"><span class="reach-num">2</span><span class="reach-text"><strong style="color:var(--navy)">By Local Train</strong> — Mumbai's suburban rail (Western, Central, Harbour) is the fastest way across the city. Andheri is a major interchange on the Western Line.</span></li>
+          <li class="reach-step"><span class="reach-num">3</span><span class="reach-text"><strong style="color:var(--navy)">By Auto/Cab</strong> — Ola and Uber are widely available. App-based autos are the best option for last-mile connectivity within 3–5 km of a station.</span></li>
+          <li class="reach-step"><span class="reach-num">4</span><span class="reach-text"><strong style="color:var(--navy)">Exact Address</strong> — WhatsApp us at +91 73036 09096 and we'll send you the full address, Google Maps pin, and nearest station/bus stop details.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tmls">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Student Stories</span><h2>What Our Students Say</h2></div>
+    <div class="tml-track" id="tmlTrack">
+      <div class="tml"><div class="head"><div class="av">SM</div><div><div class="name">Siddharth M</div><div class="role">MIS Analyst · HDFC Bank</div></div></div><div class="stars">★★★★★</div><p>I was in HDFC's operations team with no analytics skills. After the MIS course, I moved into their analytics division. The Excel VBA and SQL modules were exactly what the HDFC interview asked about.</p></div>
+      <div class="tml"><div class="head"><div class="av">PD</div><div><div class="name">Pooja D</div><div class="role">Data Analyst · Amazon Mumbai</div></div></div><div class="stars">★★★★★</div><p>Living in Andheri and working at Amazon's Mumbai office — the weekend batch was designed for people like me. No rush hours, no commute stress. Cleared Amazon's analytics interview on the first try.</p></div>
+      <div class="tml"><div class="head"><div class="av">KS</div><div><div class="name">Karan S</div><div class="role">Business Analyst · ICICI Prudential</div></div></div><div class="stars">★★★★★</div><p>Mumbai's BFSI market is massive — and XL Academy's placement team knew which firms were actively hiring. Got my first analytics role at ICICI Prudential with a 60% salary increase.</p></div>
+    </div>
+    <div class="tml-nav"><button onclick="scrollTml(-1)" aria-label="Previous">‹</button><button onclick="scrollTml(1)" aria-label="Next">›</button></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Common Questions</span><h2>Mumbai Centre — FAQs</h2></div>
+    <div class="faq-wrap">
+      <details class="faq"><summary>Which Mumbai companies hire data and analytics graduates?</summary><div class="ans">HDFC Bank, ICICI Bank, Kotak, Axis Bank, HDFC Life, Reliance, Amazon India, Myntra, Nykaa, Times Internet, Hotstar, and 200+ BFSI and e-commerce firms in Mumbai and Navi Mumbai hire analytics and MIS professionals constantly.</div></details>
+      <details class="faq"><summary>Is the evening batch late enough for office-going students?</summary><div class="ans">Yes — our 7:30–9:30 PM weekday batch is specifically designed for Mumbai professionals who work late. The online batch option on the same schedule gives additional flexibility on high-traffic days.</div></details>
+      <details class="faq"><summary>Do you cover BFSI-specific analytics use cases?</summary><div class="ans">Yes. Our curriculum covers risk reporting, loan default analysis, customer segmentation, and financial dashboarding — all directly relevant to BFSI roles. These are woven into case studies within the MIS and Analytics courses.</div></details>
+      <details class="faq"><summary>How do I get the exact centre address?</summary><div class="ans">WhatsApp us at +91 73036 09096 — we'll send you the precise address, nearest local train station or metro stop, and directions before your demo class.</div></details>
+      <details class="faq"><summary>Is Navi Mumbai also covered for placement support?</summary><div class="ans">Yes. Our placement team works across Mumbai Metropolitan Region — including Navi Mumbai, Thane, and Belapur — where many IT and BFSI firms have campuses.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Break Into Mumbai's BFSI and Analytics Sector</h2>
+      <p>Book your free demo and start building skills that open doors at India's biggest banks, NBFCs, and e-commerce giants.</p>
+      <div class="row">
+        <button class="btn btn-primary" onclick="openModal()">Book Your Free Demo</button>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+        <a href="tel:+917303609096" class="btn btn-ghost">📞 +91 73036 09096</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.PAGE_CONFIG = { preselect: 'Mumbai' };</script>
+<script src="components.js"></script>
+</body>
+</html>
+

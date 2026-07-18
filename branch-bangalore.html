@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangalore Centre — The XL Academy</title>
+<meta name="description" content="The XL Academy Bangalore — Data Science, Analytics & MIS training in India's tech capital. Online & Offline batches for IT professionals in Koramangala, HSR, and Whitefield.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.course-hero{background:linear-gradient(to right,rgba(8,16,72,.96) 0%,rgba(8,16,72,.88) 38%,rgba(8,16,72,.5) 62%,rgba(8,16,72,.1) 80%,transparent 100%),url('images/bangalore.png');background-size:cover;background-position:center right;background-repeat:no-repeat;min-height:480px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact-card h4{font-size:17px;margin-bottom:18px;color:var(--navy)}
+.contact-row{display:flex;gap:12px;margin-bottom:16px;font-size:14px;color:var(--muted);align-items:flex-start}
+.contact-row .ci{font-size:20px;flex-shrink:0;width:30px;text-align:center;margin-top:1px}
+.contact-row strong{color:var(--ink);display:block;font-weight:600;font-size:14px;margin-bottom:2px}
+.contact-row:last-child{margin-bottom:0}
+.batch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.batch-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;transition:.2s}
+.batch-card:hover{border-color:var(--orange);box-shadow:var(--shadow);transform:translateY(-4px)}
+.batch-type{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.batch-time{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.batch-days{font-size:13px;color:var(--muted);margin-bottom:12px}
+.batch-badge.avail{display:inline-block;background:#e6f9ee;border:1px solid #b2e8c9;border-radius:50px;padding:3px 13px;font-size:12px;color:#157a3c}
+.reach-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.reach-card h4{font-size:17px;margin-bottom:18px;color:var(--navy)}
+.reach-steps{list-style:none;display:grid;gap:12px}
+.reach-step{display:flex;gap:12px;align-items:flex-start}
+.reach-num{width:28px;height:28px;min-width:28px;background:var(--navy);color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.reach-text{font-size:14px;color:var(--muted);line-height:1.55;padding-top:4px}
+.map-cta{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:14px;font-weight:600;color:var(--orange-d);border:1.5px solid var(--orange-d);border-radius:50px;padding:8px 18px;transition:.2s}
+.map-cta:hover{background:var(--orange-d);color:#fff}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.batch-grid{grid-template-columns:1fr}}
+</style>
+<link rel="icon" type="image/png" href="images/fav.png"><link rel="apple-touch-icon" href="images/fav.png">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="course-hero">
+  <div class="container">
+    <div style="max-width:560px">
+      <nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Branches</span><span class="sep">›</span><span>Bangalore</span></nav>
+      <div class="rating" style="color:var(--gold);font-size:15px">★★★★★ <span style="color:rgba(255,255,255,.6);font-weight:400">Highly Rated Centre</span></div>
+      <h1>Bangalore<br>Centre</h1>
+      <p class="course-hero-sub">India's Silicon Valley is where the most advanced data and analytics roles are created. Build skills in the city that never stops hiring — with direct placement support targeting Bengaluru's 5,000+ IT companies.</p>
+      <div class="qbadges">
+        <span class="qbadge">📍 <b>Bangalore, Karnataka</b></span>
+        <span class="qbadge">🖥 <b>Online &amp; Offline</b></span>
+        <span class="qbadge">🎓 <b>4 Programs</b></span>
+        <span class="qbadge">🚀 <b>Startup Ecosystem</b></span>
+      </div>
+      <div class="course-hero-actions">
+        <button class="btn btn-primary" onclick="openModal()">Book Free Demo Class</button>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-strip">
+  <div class="container" style="padding-top:0;padding-bottom:0">
+    <div class="info-strip-inner">
+      <div class="info-item"><div class="info-ic">📚</div><div><div class="info-val">4 Programs</div><div class="info-lbl">Available Courses</div></div></div>
+      <div class="info-item"><div class="info-ic">🖥</div><div><div class="info-val">Online &amp; Offline</div><div class="info-lbl">Training Modes</div></div></div>
+      <div class="info-item"><div class="info-ic">🕐</div><div><div class="info-val">3 Batch Slots</div><div class="info-lbl">Morning / Evening / Weekend</div></div></div>
+      <div class="info-item"><div class="info-ic">🚀</div><div><div class="info-val">New Batch Soon</div><div class="info-lbl">Limited Seats Available</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Study in Bangalore</span>
+      <h2>India's Silicon Valley — The Best Place to Build a Data Career</h2>
+      <p>Bangalore houses more data and analytics roles than any other Indian city — with salaries 30–50% higher than national averages.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feature"><div class="ic">🏙️</div><h3>India's Tech Capital</h3><p>Amazon, Google, Microsoft, Flipkart, Accenture, and 5,000+ tech companies call Bangalore home — creating more analytics and data science job openings than anywhere else in India.</p></div>
+      <div class="feature"><div class="ic">💡</div><h3>Startup Ecosystem</h3><p>Koramangala and HSR Layout are home to hundreds of funded startups — all building on data. Early-stage analytics roles here offer equity, growth, and impact that big tech can't match.</p></div>
+      <div class="feature"><div class="ic">💰</div><h3>Highest Salary Premiums</h3><p>Bangalore consistently offers the highest data science and analytics salaries in India — often 30–50% above the same role in Tier-2 cities — making the investment in training pay back faster.</p></div>
+      <div class="feature"><div class="ic">🌐</div><h3>Global Exposure</h3><p>MNCs in Bangalore give you direct access to global projects, international managers, and cross-border analytics work from your first job — accelerating your growth significantly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section courses" id="courses">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Available at This Centre</span>
+      <h2>All 4 Programs — Taught Here</h2>
+      <p>Every program in our catalogue is available at the Bangalore centre, both online and offline.</p>
+    </div>
+    <div class="course-grid">
+      <div class="course"><div class="thumb">📊</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>Data Analytics with Python</h3><div class="sub">Excel, SQL, Python, Power BI, Tableau</div><ul><li><b>Duration</b> 6 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Data / Marketing Analyst</li></ul><a href="data-analytics-python" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">🤖</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>Data Science with ML</h3><div class="sub">Python, Statistics, ML, Deep Learning</div><ul><li><b>Duration</b> 8 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Data Scientist / ML Engineer</li></ul><a href="data-science" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">📈</div><div class="body"><div class="rating">★★★★★ <span>4.5 / 5</span></div><h3>Data Analytics</h3><div class="sub">Advanced Excel, SQL, Power BI, Tableau</div><ul><li><b>Duration</b> 4 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Business / Operations Analyst</li></ul><a href="data-analytics" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">🗂️</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>MIS &amp; Reporting</h3><div class="sub">Advanced Excel, SQL, Power BI, VBA</div><ul><li><b>Duration</b> 4 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> MIS Executive / Reporting Analyst</li></ul><a href="mis-reporting" class="btn btn-outline">Explore Program</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-soft);padding-top:0">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Batch Schedule</span><h2>Choose a Timing That Works for You</h2><p>Batches designed for Bangalore's working professionals and freshers alike.</p></div>
+    <div class="batch-grid">
+      <div class="batch-card"><div class="batch-type">Morning Batch</div><div class="batch-time">7:00 AM<br>– 9:00 AM</div><div class="batch-days">Monday to Friday</div><div class="batch-badge avail">Seats Available</div></div>
+      <div class="batch-card"><div class="batch-type">Evening Batch</div><div class="batch-time">7:00 PM<br>– 9:00 PM</div><div class="batch-days">Monday to Friday</div><div class="batch-badge avail">Seats Available</div></div>
+      <div class="batch-card"><div class="batch-type">Weekend Batch</div><div class="batch-time">10:00 AM<br>– 2:00 PM</div><div class="batch-days">Saturday &amp; Sunday</div><div class="batch-badge avail">Seats Available</div></div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:14px;color:var(--muted)">Online batches available on the same schedule. <a href="#" onclick="openModal();return false;" style="color:var(--orange-d);font-weight:600">Contact us</a> for the next start date.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Find Us</span><h2>Location &amp; How to Reach</h2><p>Our Bangalore centre is located in one of the city's most accessible tech neighbourhoods.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>📍 Centre Address</h4>
+        <div class="contact-row"><span class="ci">📍</span><div><strong>City</strong>Bangalore (Bengaluru), Karnataka</div></div>
+        <div class="contact-row"><span class="ci">🏢</span><div><strong>Area</strong>Koramangala / HSR Layout area — contact us for the exact address and landmark after registration.</div></div>
+        <div class="contact-row"><span class="ci">🚇</span><div><strong>Nearest Metro</strong>Purple Line or Green Line stations near the area. Contact us for walking directions from the nearest station.</div></div>
+        <div class="contact-row"><span class="ci">📞</span><div><strong>Phone</strong><a href="tel:+917303609096" style="color:var(--orange-d)">+91 73036 09096</a></div></div>
+        <div class="contact-row"><span class="ci">✉</span><div><strong>Email</strong><a href="mailto:support@thexlacademy.com" style="color:var(--orange-d)">support@thexlacademy.com</a></div></div>
+        <div class="contact-row"><span class="ci">🕐</span><div><strong>Hours</strong>Monday – Saturday, 8:00 AM – 9:00 PM</div></div>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="map-cta">💬 Get Address on WhatsApp</a>
+      </div>
+      <div class="reach-card">
+        <h4>🚇 How to Reach Us</h4>
+        <ul class="reach-steps">
+          <li class="reach-step"><span class="reach-num">1</span><span class="reach-text"><strong style="color:var(--navy)">By Metro</strong> — Bangalore Metro (Namma Metro) covers most of the city. Koramangala and HSR Layout are accessible from both the Purple and Green lines.</span></li>
+          <li class="reach-step"><span class="reach-num">2</span><span class="reach-text"><strong style="color:var(--navy)">By Auto/Cab</strong> — Ola and Uber are widely available across Bangalore. Koramangala and HSR Layout are well-connected landmarks — any driver will know the area.</span></li>
+          <li class="reach-step"><span class="reach-num">3</span><span class="reach-text"><strong style="color:var(--navy)">From Whitefield / Electronic City</strong> — Take the metro or cab. Most Bangalore IT hubs are within 20–40 minutes depending on traffic and zone.</span></li>
+          <li class="reach-step"><span class="reach-num">4</span><span class="reach-text"><strong style="color:var(--navy)">Exact Address</strong> — WhatsApp us at +91 73036 09096 and we'll send you the Google Maps pin, nearest landmark, and parking details before your demo.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tmls">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Student Stories</span><h2>What Our Students Say</h2></div>
+    <div class="tml-track" id="tmlTrack">
+      <div class="tml"><div class="head"><div class="av">PK</div><div><div class="name">Priya K</div><div class="role">Data Analyst · Amazon India</div></div></div><div class="stars">★★★★★</div><p>I was working in Koramangala when I joined the weekend batch. The curriculum was aligned exactly with what Amazon interviews test — case studies, SQL challenges, and Python tasks. Got placed in 6 months.</p></div>
+      <div class="tml"><div class="head"><div class="av">VS</div><div><div class="name">Vignesh S</div><div class="role">Business Analyst · Accenture Bangalore</div></div></div><div class="stars">★★★★★</div><p>XL Academy's placement team knew exactly which Bangalore companies were hiring. They prepared us specifically for Accenture's analytics interview process. My current salary is 2× what I earned before.</p></div>
+      <div class="tml"><div class="head"><div class="av">AM</div><div><div class="name">Ananya M</div><div class="role">Data Scientist · Startupname Technologies</div></div></div><div class="stars">★★★★★</div><p>Being in Bangalore's startup belt and doing the Data Science course meant I could attend weekend hackathons and demos while learning. Landed a role in a funded startup with equity.</p></div>
+    </div>
+    <div class="tml-nav"><button onclick="scrollTml(-1)" aria-label="Previous">‹</button><button onclick="scrollTml(1)" aria-label="Next">›</button></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Common Questions</span><h2>Bangalore Centre — FAQs</h2></div>
+    <div class="faq-wrap">
+      <details class="faq"><summary>Which Bangalore companies hire data analytics graduates?</summary><div class="ans">Amazon, Flipkart, Google, Microsoft, Accenture, Infosys BPM, Capgemini, Mu Sigma, and 100+ analytics-first startups in Koramangala and HSR Layout actively hire from our placement drives.</div></details>
+      <details class="faq"><summary>Is the offline centre accessible from Electronic City or Whitefield?</summary><div class="ans">Yes. Both areas are connected to Koramangala and HSR Layout via metro and cab. Travel time varies — typically 20–45 minutes depending on traffic. Many students from Electronic City prefer the online track for weekday sessions.</div></details>
+      <details class="faq"><summary>Are salaries in Bangalore really higher?</summary><div class="ans">Yes. Entry-level data analyst roles in Bangalore typically start 25–40% higher than equivalent roles in Pune or Hyderabad, and often have faster promotion cycles due to higher competition and global MNC presence.</div></details>
+      <details class="faq"><summary>How do I get the exact centre address?</summary><div class="ans">WhatsApp us at +91 73036 09096 — we'll send you the exact Google Maps pin, landmark, and parking details before your demo class or first session.</div></details>
+      <details class="faq"><summary>Do you offer placement support specific to Bangalore companies?</summary><div class="ans">Yes. Our placement team maintains active relationships with Bangalore-based hiring managers and runs company-specific mock interview sessions for analytics roles in Amazon, Flipkart, Accenture, and leading startups.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Build a Data Career in India's Tech Capital</h2>
+      <p>Book your free demo today and join the centre placed in the city with the most data science job openings in India.</p>
+      <div class="row">
+        <button class="btn btn-primary" onclick="openModal()">Book Your Free Demo</button>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+        <a href="tel:+917303609096" class="btn btn-ghost">📞 +91 73036 09096</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.PAGE_CONFIG = { preselect: 'Bangalore' };</script>
+<script src="components.js"></script>
+</body>
+</html>
+

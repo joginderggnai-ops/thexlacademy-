@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noida Centre — The XL Academy</title>
+<meta name="description" content="The XL Academy Noida — Data Science, Analytics & MIS training in Noida's IT corridor. Online & Offline batches for IT professionals and freshers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.course-hero{background:linear-gradient(to right,rgba(8,16,72,.96) 0%,rgba(8,16,72,.88) 38%,rgba(8,16,72,.5) 62%,rgba(8,16,72,.1) 80%,transparent 100%),url('images/noida.png');background-size:cover;background-position:center right;background-repeat:no-repeat;min-height:480px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact-card h4{font-size:17px;margin-bottom:18px;color:var(--navy)}
+.contact-row{display:flex;gap:12px;margin-bottom:16px;font-size:14px;color:var(--muted);align-items:flex-start}
+.contact-row .ci{font-size:20px;flex-shrink:0;width:30px;text-align:center;margin-top:1px}
+.contact-row strong{color:var(--ink);display:block;font-weight:600;font-size:14px;margin-bottom:2px}
+.contact-row:last-child{margin-bottom:0}
+.batch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.batch-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;transition:.2s}
+.batch-card:hover{border-color:var(--orange);box-shadow:var(--shadow);transform:translateY(-4px)}
+.batch-type{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.batch-time{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.batch-days{font-size:13px;color:var(--muted);margin-bottom:12px}
+.batch-badge.avail{display:inline-block;background:#e6f9ee;border:1px solid #b2e8c9;border-radius:50px;padding:3px 13px;font-size:12px;color:#157a3c}
+.reach-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.reach-card h4{font-size:17px;margin-bottom:18px;color:var(--navy)}
+.reach-steps{list-style:none;display:grid;gap:12px}
+.reach-step{display:flex;gap:12px;align-items:flex-start}
+.reach-num{width:28px;height:28px;min-width:28px;background:var(--navy);color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.reach-text{font-size:14px;color:var(--muted);line-height:1.55;padding-top:4px}
+.map-cta{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:14px;font-weight:600;color:var(--orange-d);border:1.5px solid var(--orange-d);border-radius:50px;padding:8px 18px;transition:.2s}
+.map-cta:hover{background:var(--orange-d);color:#fff}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.batch-grid{grid-template-columns:1fr}}
+</style>
+<link rel="icon" type="image/png" href="images/fav.png"><link rel="apple-touch-icon" href="images/fav.png">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="course-hero">
+  <div class="container">
+    <div style="max-width:560px">
+      <nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Branches</span><span class="sep">›</span><span>Noida</span></nav>
+      <div class="rating" style="color:var(--gold);font-size:15px">★★★★★ <span style="color:rgba(255,255,255,.6);font-weight:400">Highly Rated Centre</span></div>
+      <h1>Noida<br>Centre</h1>
+      <p class="course-hero-sub">Noida's IT corridor is one of India's most active tech hiring zones. Learn data analytics and science in the same city where TCS, HCL, Wipro, and Amazon have offices.</p>
+      <div class="qbadges">
+        <span class="qbadge">📍 <b>Noida, Uttar Pradesh</b></span>
+        <span class="qbadge">🖥 <b>Online &amp; Offline</b></span>
+        <span class="qbadge">🎓 <b>4 Programs</b></span>
+        <span class="qbadge">💻 <b>IT Corridor Access</b></span>
+      </div>
+      <div class="course-hero-actions">
+        <button class="btn btn-primary" onclick="openModal()">Book Free Demo Class</button>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-strip">
+  <div class="container" style="padding-top:0;padding-bottom:0">
+    <div class="info-strip-inner">
+      <div class="info-item"><div class="info-ic">📚</div><div><div class="info-val">4 Programs</div><div class="info-lbl">Available Courses</div></div></div>
+      <div class="info-item"><div class="info-ic">🖥</div><div><div class="info-val">Online &amp; Offline</div><div class="info-lbl">Training Modes</div></div></div>
+      <div class="info-item"><div class="info-ic">🕐</div><div><div class="info-val">3 Batch Slots</div><div class="info-lbl">Morning / Evening / Weekend</div></div></div>
+      <div class="info-item"><div class="info-ic">🚀</div><div><div class="info-val">New Batch Soon</div><div class="info-lbl">Limited Seats Available</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Study in Noida</span>
+      <h2>India's IT Corridor — Right Outside Your Classroom</h2>
+      <p>Noida Sectors 62, 63, and 132 make up one of India's biggest IT employment belts — making it one of the best cities to build a data career.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feature"><div class="ic">💻</div><h3>IT Corridor Access</h3><p>TCS, HCL Technologies, Wipro, Infosys, and 200+ IT companies operate from Noida — providing the largest local placement pool for analytics graduates.</p></div>
+      <div class="feature"><div class="ic">🛒</div><h3>E-commerce Giant Hubs</h3><p>Flipkart, Amazon India, and Snapdeal all have significant Noida operations — constantly hiring for data, MIS, and analytics roles.</p></div>
+      <div class="feature"><div class="ic">💰</div><h3>Affordable Cost of Living</h3><p>Noida offers a high quality of life at lower costs than Delhi — more disposable income, shorter commutes, and a growing professional community.</p></div>
+      <div class="feature"><div class="ic">🌱</div><h3>Growing Startup Scene</h3><p>Noida's startup ecosystem is expanding rapidly — with data-driven companies like Paytm and several funded startups creating new analytics roles each year.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section courses" id="courses">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Available at This Centre</span><h2>All 4 Programs — Available in Noida</h2><p>Full curriculum, same instructors, same placement support — now available in Noida.</p></div>
+    <div class="course-grid">
+      <div class="course"><div class="thumb">📊</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>Data Analytics with Python</h3><div class="sub">Excel, SQL, Python, Power BI, Tableau</div><ul><li><b>Duration</b> 6 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Data / Marketing Analyst</li></ul><a href="data-analytics-python" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">🤖</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>Data Science with ML</h3><div class="sub">Python, Statistics, ML, Deep Learning</div><ul><li><b>Duration</b> 8 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Data Scientist / ML Engineer</li></ul><a href="data-science" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">📈</div><div class="body"><div class="rating">★★★★★ <span>4.5 / 5</span></div><h3>Data Analytics</h3><div class="sub">Advanced Excel, SQL, Power BI, Tableau</div><ul><li><b>Duration</b> 4 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> Business / Operations Analyst</li></ul><a href="data-analytics" class="btn btn-outline">Explore Program</a></div></div>
+      <div class="course"><div class="thumb">🗂️</div><div class="body"><div class="rating">★★★★★ <span>4.8 / 5</span></div><h3>MIS &amp; Reporting</h3><div class="sub">Advanced Excel, SQL, Power BI, VBA</div><ul><li><b>Duration</b> 4 Months</li><li><b>Mode</b> Online &amp; Offline</li><li><b>Outcome</b> MIS Executive / Reporting Analyst</li></ul><a href="mis-reporting" class="btn btn-outline">Explore Program</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-soft);padding-top:0">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Batch Schedule</span><h2>Choose a Timing That Works for You</h2><p>Batches designed around Noida's IT professional schedules.</p></div>
+    <div class="batch-grid">
+      <div class="batch-card"><div class="batch-type">Morning Batch</div><div class="batch-time">7:00 AM<br>– 9:00 AM</div><div class="batch-days">Monday to Friday</div><div class="batch-badge avail">Seats Available</div></div>
+      <div class="batch-card"><div class="batch-type">Evening Batch</div><div class="batch-time">6:30 PM<br>– 8:30 PM</div><div class="batch-days">Monday to Friday</div><div class="batch-badge avail">Seats Available</div></div>
+      <div class="batch-card"><div class="batch-type">Weekend Batch</div><div class="batch-time">9:00 AM<br>– 1:00 PM</div><div class="batch-days">Saturday &amp; Sunday</div><div class="batch-badge avail">Seats Available</div></div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:14px;color:var(--muted)">Online batches available on the same schedule. <a href="#" onclick="openModal();return false;" style="color:var(--orange-d);font-weight:600">Contact us</a> for the next start date.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Find Us</span><h2>Location &amp; How to Reach</h2><p>Our Noida centre is conveniently located for students across Noida and Greater Noida.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>📍 Centre Address</h4>
+        <div class="contact-row"><span class="ci">📍</span><div><strong>City</strong>Noida, Uttar Pradesh</div></div>
+        <div class="contact-row"><span class="ci">🏢</span><div><strong>Area</strong>Near Sector 18 / IT Sector area — contact us for the exact address and landmark after registration.</div></div>
+        <div class="contact-row"><span class="ci">🚇</span><div><strong>Nearest Metro</strong>Sector 18 / Noida metro stations on the Blue/Aqua Line. Contact us for walking directions.</div></div>
+        <div class="contact-row"><span class="ci">📞</span><div><strong>Phone</strong><a href="tel:+917303609096" style="color:var(--orange-d)">+91 73036 09096</a></div></div>
+        <div class="contact-row"><span class="ci">✉</span><div><strong>Email</strong><a href="mailto:support@thexlacademy.com" style="color:var(--orange-d)">support@thexlacademy.com</a></div></div>
+        <div class="contact-row"><span class="ci">🕐</span><div><strong>Hours</strong>Monday – Saturday, 8:00 AM – 9:00 PM</div></div>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="map-cta">💬 Get Address on WhatsApp</a>
+      </div>
+      <div class="reach-card">
+        <h4>🚇 How to Reach Us</h4>
+        <ul class="reach-steps">
+          <li class="reach-step"><span class="reach-num">1</span><span class="reach-text"><strong style="color:var(--navy)">By Metro</strong> — Noida is well-connected via the Blue and Aqua metro lines. Contact us for the nearest station to the centre.</span></li>
+          <li class="reach-step"><span class="reach-num">2</span><span class="reach-text"><strong style="color:var(--navy)">From Delhi</strong> — Take the Blue Line from any Delhi station. Noida City Centre and Botanical Garden are key interchange points.</span></li>
+          <li class="reach-step"><span class="reach-num">3</span><span class="reach-text"><strong style="color:var(--navy)">By Road</strong> — Noida is accessible via NH-24 and the Noida–Greater Noida Expressway. Cab services (Ola, Uber) are readily available throughout the city.</span></li>
+          <li class="reach-step"><span class="reach-num">4</span><span class="reach-text"><strong style="color:var(--navy)">Exact Address</strong> — WhatsApp us at +91 73036 09096 and we'll send you the Google Maps pin and landmark details before your demo.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tmls">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Student Stories</span><h2>What Our Students Say</h2></div>
+    <div class="tml-track" id="tmlTrack">
+      <div class="tml"><div class="head"><div class="av">AH</div><div><div class="name">Abhishek H S</div><div class="role">MIS Executive · Zepto</div></div></div><div class="stars">★★★★★</div><p>I was working in Noida Sector 62 when I joined. The evening batch was right after my office hours. Got placed at Zepto — one of the biggest tech companies in the Noida belt.</p></div>
+      <div class="tml"><div class="head"><div class="av">RT</div><div><div class="name">Rameshwari Tailor</div><div class="role">Trainee Operations · Spectrum</div></div></div><div class="stars">★★★★★</div><p>As a fresher in Noida, I wasn't sure which institute to choose. XL Academy's curriculum covered exactly what HCL and TCS ask in analytics interviews. Got placed within 2 months.</p></div>
+      <div class="tml"><div class="head"><div class="av">DM</div><div><div class="name">Deepak Mittal</div><div class="role">Sr. Executive · Infopro Learning</div></div></div><div class="stars">★★★★★</div><p>Noida has huge IT hiring — and XL Academy's placement drives targeted companies right here. I didn't have to relocate. My new office is 15 minutes from where I studied.</p></div>
+    </div>
+    <div class="tml-nav"><button onclick="scrollTml(-1)" aria-label="Previous">‹</button><button onclick="scrollTml(1)" aria-label="Next">›</button></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Common Questions</span><h2>Noida Centre — FAQs</h2></div>
+    <div class="faq-wrap">
+      <details class="faq"><summary>Which IT companies in Noida hire your graduates?</summary><div class="ans">TCS, HCL Technologies, Wipro, Infosys, Amazon, Flipkart, and 50+ mid-size IT and analytics firms in Noida Sectors 62, 63, and 132 actively hire from our placement drives.</div></details>
+      <details class="faq"><summary>Is this a good location if I live in Greater Noida?</summary><div class="ans">Yes. The centre is accessible from Greater Noida via the Aqua Line metro and Noida–Greater Noida Expressway. Many of our students commute from Greater Noida for offline classes.</div></details>
+      <details class="faq"><summary>Can I switch to online if I miss an offline session?</summary><div class="ans">Yes. All offline sessions have a corresponding online option. Missed classes can be covered via recorded sessions, and you can attend live online classes from your home.</div></details>
+      <details class="faq"><summary>How do I get the exact centre address?</summary><div class="ans">Contact us on WhatsApp at +91 73036 09096 — we'll send you the Google Maps pin, nearest landmark, and parking/metro info before your demo class or first session.</div></details>
+      <details class="faq"><summary>Are there EMI or instalment options for course fees?</summary><div class="ans">Yes. We offer EMI plans and are tied up with education loan providers. Call or WhatsApp +91 73036 09096 for a personalised fee and EMI breakdown.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Learn Analytics in Noida's IT Hub</h2>
+      <p>Book your free demo and start building skills for the companies in Noida's tech corridor. New batches starting soon.</p>
+      <div class="row">
+        <button class="btn btn-primary" onclick="openModal()">Book Your Free Demo</button>
+        <a href="https://web.whatsapp.com/send?phone=917303609096" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+        <a href="tel:+917303609096" class="btn btn-ghost">📞 +91 73036 09096</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.PAGE_CONFIG = { preselect: 'Noida' };</script>
+<script src="components.js"></script>
+</body>
+</html>
+

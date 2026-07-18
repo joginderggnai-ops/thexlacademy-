@@ -1,0 +1,12 @@
+Options -MultiViews
+RewriteEngine On
+
+# Serve index.html for root
+DirectoryIndex index.html
+
+# Skip if file or directory already exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Map /page-name → /page-name.html
+RewriteRule ^([^\.]+)/?$ $1.html [NC,L]
