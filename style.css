@@ -309,11 +309,13 @@ footer a:hover{color:var(--orange)}
    RESPONSIVE
    ============================================= */
 @media(max-width:980px){
-  .hero-grid{grid-template-columns:1fr}.hero-img-wrap{display:none}
+  .hero-grid{grid-template-columns:1fr;min-height:auto}.hero-img-wrap{display:none}
+  .hero-grid>div:first-child{padding:52px 0}
   .stats-inner,.why-grid,.course-grid{grid-template-columns:repeat(2,1fr)}
   .skills-grid{grid-template-columns:repeat(4,1fr)}
   .steps{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
+  .tml{flex-basis:340px}
   /* course page */
   .course-hero-grid{grid-template-columns:1fr}.hero-info-card{display:none}
   .info-strip-inner{grid-template-columns:repeat(2,1fr)}
@@ -332,11 +334,25 @@ footer a:hover{color:var(--orange)}
   .nav-cta .btn{display:none}
 }
 @media(max-width:520px){
+  .container{padding:0 16px}
   .stats-inner,.why-grid,.course-grid,.foot-grid{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .section{padding:60px 0}
-  .cta-band{padding:36px 22px}
+  .section{padding:56px 0}
+  .cta-band{padding:36px 20px}
+  .cta-band .row{flex-direction:column;align-items:stretch}
+  .cta-band .row .btn{width:100%;justify-content:center}
+  /* homepage hero */
+  .hero p{font-size:16px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .hero-badges{gap:16px}
+  .hero-badges b{font-size:22px}
+  /* testimonials — fit card to viewport */
+  .tml{flex:0 0 84vw;padding:22px}
   /* course page */
+  .course-hero{padding:40px 0 52px}
+  .course-hero-actions{flex-direction:column;align-items:stretch}
+  .course-hero-actions .btn{width:100%;justify-content:center}
   .info-strip-inner{grid-template-columns:1fr}
   .info-item{border-right:none;border-bottom:1px solid var(--line)}
   .info-item:last-child{border-bottom:none}
