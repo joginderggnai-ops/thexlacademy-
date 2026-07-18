@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,9 +10,73 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* Course accent: Navy gradient */
   .course-hero{background:radial-gradient(800px 400px at 75% -10%,rgba(22,194,213,.2),transparent),linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,#1a3276 100%)}
   .mod-num{background:linear-gradient(135deg,var(--navy),var(--navy-2))}
+
+  /* Why join + ratings */
+  .platform-ratings{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;justify-content:center}
+  .p-rating{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 22px}
+  .p-rating-platform{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.3px}
+  .p-rating-score{font-size:22px;font-weight:800;color:var(--navy);line-height:1}
+  .p-rating-stars{color:var(--gold);font-size:11px;margin-top:1px}
+
+  /* Outcomes (career) */
+  .outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .outcome-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;transition:.25s}
+  .outcome-card:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+  .outcome-role{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+  .salary-pill{display:inline-block;background:#e6f9ee;color:#157a3c;border-radius:50px;padding:4px 13px;font-size:13px;font-weight:600;margin-bottom:10px}
+  .outcome-cos{font-size:12px;color:var(--muted);line-height:1.6}
+
+  /* Fee card */
+  .fee-wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:32px;align-items:start;max-width:920px;margin:0 auto}
+  .fee-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow);position:sticky;top:90px}
+  .fee-amount{font-size:42px;font-weight:800;color:var(--navy);line-height:1}
+  .fee-amount span{font-size:18px;font-weight:500;color:var(--muted)}
+  .fee-note{font-size:12px;color:var(--muted);margin-top:5px;margin-bottom:18px}
+  .fee-divider{height:1px;background:var(--line);margin:16px 0}
+  .fee-row{display:flex;justify-content:space-between;font-size:14px;padding:4px 0}
+  .fee-row .lbl{color:var(--muted)}.fee-row .val{font-weight:600;color:var(--navy)}
+  .fee-includes{list-style:none;display:grid;gap:8px;margin:16px 0 22px}
+  .fee-includes li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink)}
+  .fee-includes li::before{content:"✓";width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+  .fee-actions{display:grid;gap:10px}
+  .fee-emi{background:var(--bg-soft);border-radius:10px;padding:11px 14px;font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+  .fee-emi b{color:var(--navy)}
+  .batch-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:18px}
+  .batch-card h3{font-size:17px;margin-bottom:16px}
+  .batch-row{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;background:var(--bg-soft);border-radius:10px;font-size:13.5px;margin-bottom:10px}
+  .batch-row:last-child{margin-bottom:0}
+  .batch-row .info b{color:var(--navy)}
+  .batch-row .info small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .badge-open{background:#e6f9ee;color:#157a3c;border-radius:50px;padding:4px 11px;font-size:11.5px;font-weight:600;white-space:nowrap}
+  .badge-few{background:#fff3e4;color:#c85a12;border-radius:50px;padding:4px 11px;font-size:11.5px;font-weight:600;white-space:nowrap}
+  .centres-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .centres-card h3{font-size:17px;margin-bottom:14px}
+  .centre-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .centre-tag{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--navy)}
+  .centre-tag-online{background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff;border:0}
+
+  /* Market strip */
+  .market-strip{background:var(--navy);padding:64px 0;color:#fff}
+  .market-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .market-inner h2{color:#fff;font-size:clamp(22px,2.8vw,34px);margin:10px 0 14px}
+  .market-inner p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.7}
+  .market-salary{font-size:40px;font-weight:800;color:var(--gold);margin-top:20px;line-height:1}
+  .market-salary-lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+  .mstat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .mstat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px}
+  .mstat-num{font-size:26px;font-weight:800;color:var(--gold);line-height:1}
+  .mstat-lbl{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.4}
+
+  @media(max-width:980px){
+    .outcomes-grid{grid-template-columns:repeat(2,1fr)}
+    .fee-wrap,.market-inner{grid-template-columns:1fr}
+    .fee-card{position:static}
+  }
+  @media(max-width:600px){
+    .outcomes-grid{grid-template-columns:1fr}
+  }
 </style>
 <link rel="icon" type="image/png" href="images/fav.png"><link rel="apple-touch-icon" href="images/fav.png">
 </head>
@@ -20,7 +84,7 @@
 
 <div id="site-header"></div>
 
-<!-- Course Hero -->
+<!-- Hero -->
 <section class="course-hero">
   <div class="container course-hero-grid">
     <div>
@@ -55,41 +119,174 @@
   </div>
 </section>
 
-<!-- Info Strip -->
-<section class="info-strip">
-  <div class="container" style="padding-top:0;padding-bottom:0">
-    <div class="info-strip-inner">
-      <div class="info-item"><div class="info-ic">🕐</div><div><div class="info-val">6 Months</div><div class="info-lbl">Course Duration</div></div></div>
-      <div class="info-item"><div class="info-ic">👨‍💻</div><div><div class="info-val">Online &amp; Offline</div><div class="info-lbl">Learning Mode</div></div></div>
-      <div class="info-item"><div class="info-ic">🏆</div><div><div class="info-val">₹4 – 12 LPA</div><div class="info-lbl">Average Salary</div></div></div>
-      <div class="info-item"><div class="info-ic">🚀</div><div><div class="info-val">New Batch Soon</div><div class="info-lbl">Limited Seats</div></div></div>
-    </div>
-  </div>
-</section>
 
-<!-- Highlight Strip -->
+<!-- Numbers -->
 <div class="highlight-strip">
   <div class="container">
     <div class="highlights-grid">
-      <div class="highlight-item"><div class="highlight-num">6+</div><div class="highlight-lbl">Tools Covered</div></div>
-      <div class="highlight-item"><div class="highlight-num">2</div><div class="highlight-lbl">Capstone Projects</div></div>
+      <div class="highlight-item"><div class="highlight-num">3.2K+</div><div class="highlight-lbl">Learners Trained</div></div>
+      <div class="highlight-item"><div class="highlight-num">96%</div><div class="highlight-lbl">Placement Rate</div></div>
       <div class="highlight-item"><div class="highlight-num">7</div><div class="highlight-lbl">Curriculum Modules</div></div>
-      <div class="highlight-item"><div class="highlight-num">100%</div><div class="highlight-lbl">Placement Assistance</div></div>
+      <div class="highlight-item"><div class="highlight-num">2</div><div class="highlight-lbl">Capstone Projects</div></div>
     </div>
   </div>
 </div>
 
-<!-- Curriculum -->
+<!-- Why Join + Ratings -->
+<section class="section" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why The XL Academy</span>
+      <h2>What Makes This Program Different</h2>
+      <p>3,000+ learners have chosen XL Academy over self-paced online platforms. Here's why.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feature">
+        <div class="ic">🎯</div>
+        <h3>Industry-Aligned Curriculum</h3>
+        <p>Updated every quarter based on what companies are actively hiring for — not textbook content.</p>
+      </div>
+      <div class="feature">
+        <div class="ic">🛠️</div>
+        <h3>Hands-On from Day 1</h3>
+        <p>Every module includes live practice on real datasets. By the Python module you're cleaning and analysing data yourself.</p>
+      </div>
+      <div class="feature">
+        <div class="ic">👨‍🏫</div>
+        <h3>Industry Expert Trainers</h3>
+        <p>Instructors have 5–10 years in analytics roles — they know what interviews ask because they've been on both sides.</p>
+      </div>
+      <div class="feature">
+        <div class="ic">💼</div>
+        <h3>Placement Support</h3>
+        <p>Resume, LinkedIn, mock interviews, and direct company connects — the placement team starts working with you in week 1.</p>
+      </div>
+    </div>
+    <div class="platform-ratings">
+      <div class="p-rating">
+        <div><div class="p-rating-platform">Google</div><div class="p-rating-score">4.7 / 5</div><div class="p-rating-stars">★★★★★</div></div>
+      </div>
+      <div class="p-rating">
+        <div><div class="p-rating-platform">JustDial</div><div class="p-rating-score">4.7 / 5</div><div class="p-rating-stars">★★★★★</div></div>
+      </div>
+      <div class="p-rating">
+        <div><div class="p-rating-platform">Facebook</div><div class="p-rating-score">4.4 / 5</div><div class="p-rating-stars">★★★★½</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Career Outcomes — shown BEFORE curriculum so user sees the destination first -->
 <section class="section">
   <div class="container">
     <div class="section-head">
+      <span class="eyebrow">Where You'll Land</span>
+      <h2>Roles You Can Target After This Course</h2>
+      <p>Our graduates work at top companies across e-commerce, finance, consulting, and tech.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-role">📊 Data Analyst</div>
+        <div class="salary-pill">₹4 – 9 LPA</div>
+        <div class="outcome-cos">TCS, Wipro, Infosys, Accenture, Deloitte, Genpact, HCL</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-role">📣 Marketing Analyst</div>
+        <div class="salary-pill">₹5 – 10 LPA</div>
+        <div class="outcome-cos">Amazon, Flipkart, Meesho, Urban Company, Zomato, Swiggy</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-role">📦 Product Analyst</div>
+        <div class="salary-pill">₹6 – 12 LPA</div>
+        <div class="outcome-cos">Paytm, PhonePe, Ola, Razorpay, CRED, Zepto</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-role">📋 Business Analyst</div>
+        <div class="salary-pill">₹5 – 11 LPA</div>
+        <div class="outcome-cos">KPMG, EY, PwC, Mu Sigma, Tiger Analytics, Fractal</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-role">📈 BI Developer</div>
+        <div class="salary-pill">₹5 – 10 LPA</div>
+        <div class="outcome-cos">Cognizant, Capgemini, Tech Mahindra, Mphasis, Hexaware</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-role">🔍 Operations Analyst</div>
+        <div class="salary-pill">₹4 – 8 LPA</div>
+        <div class="outcome-cos">Hitachi, DHL, Mahindra, Max Life, ICICI, HDFC Bank</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fee + Batch -->
+<section class="section" style="background:var(--bg-soft);padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Enroll Today</span>
+      <h2>Fee, Batches &amp; Centres</h2>
+      <p>Transparent pricing. EMI options available. Seats are limited per batch — reserve yours early.</p>
+    </div>
+    <div class="fee-wrap">
+      <div class="fee-card">
+        <div class="fee-amount">₹35,000 <span>/ course</span></div>
+        <div class="fee-note">* All study materials, projects &amp; certificate included</div>
+        <div class="fee-divider"></div>
+        <div class="fee-row"><span class="lbl">Duration</span><span class="val">6 Months</span></div>
+        <div class="fee-row"><span class="lbl">Mode</span><span class="val">Online &amp; Offline</span></div>
+        <div class="fee-row"><span class="lbl">Batch Size</span><span class="val">Max 20 Students</span></div>
+        <div class="fee-row"><span class="lbl">Certificate</span><span class="val">XL Academy Certified</span></div>
+        <div class="fee-divider"></div>
+        <ul class="fee-includes">
+          <li>48 hours live instructor-led sessions</li>
+          <li>90+ downloadable notes &amp; resources</li>
+          <li>2 industry-grade capstone projects</li>
+          <li>Doubt-clearing after every module</li>
+          <li>Resume &amp; LinkedIn profile review</li>
+          <li>Mock interviews + placement drives</li>
+        </ul>
+        <div class="fee-actions">
+          <button class="btn btn-primary" onclick="openModal()" style="width:100%;justify-content:center">Book Free Demo Class</button>
+          <a href="tel:+917303609096" class="btn btn-call" style="width:100%;justify-content:center">Talk to a Counsellor</a>
+        </div>
+        <div class="fee-emi">💳 EMI from <b>₹2,950/month</b> &nbsp;·&nbsp; <a href="education-loan" style="color:var(--orange-d);font-weight:600">Education loan available</a></div>
+      </div>
+      <div>
+        <div class="batch-card">
+          <h3>Upcoming Batches</h3>
+          <div class="batch-row"><div class="info"><b>Weekday Batch</b><small>Mon · Wed · Fri — 7:00 PM to 9:00 PM</small></div><span class="badge-open">Starting Soon</span></div>
+          <div class="batch-row"><div class="info"><b>Weekend Batch</b><small>Sat &amp; Sun — 10:00 AM to 1:00 PM</small></div><span class="badge-few">Few Seats Left</span></div>
+          <div class="batch-row"><div class="info"><b>Online Batch</b><small>Flexible — recorded backups included</small></div><span class="badge-open">Open</span></div>
+        </div>
+        <div class="centres-card">
+          <h3>Available Centres</h3>
+          <div class="centre-tags">
+            <a href="branch-delhi" class="centre-tag">📍 New Delhi (HQ)</a>
+            <a href="branch-gurugram" class="centre-tag">📍 Gurugram</a>
+            <a href="branch-noida" class="centre-tag">📍 Noida</a>
+            <a href="branch-bangalore" class="centre-tag">📍 Bangalore</a>
+            <a href="branch-pune" class="centre-tag">📍 Pune</a>
+            <a href="branch-mumbai" class="centre-tag">📍 Mumbai</a>
+            <span class="centre-tag centre-tag-online">🌐 Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Curriculum -->
+<section class="section" style="background:var(--bg-soft);padding-top:0">
+  <div class="container">
+    <div class="section-head">
       <span class="eyebrow">Course Curriculum</span>
-      <h2>What You'll Learn — Module by Module</h2>
-      <p>A structured 6-month program that takes you from Excel basics to advanced Python analytics and live project work.</p>
+      <h2>7 Modules — From Excel to Python Analytics</h2>
+      <p>A structured 6-month program that takes you from Excel basics to advanced Python analytics and live project work. Click any module to expand.</p>
     </div>
     <div class="curriculum-wrap">
 
-      <details class="module">
+      <details class="module" open>
         <summary>
           <div class="mod-num">01</div>
           <div class="mod-title-wrap"><div class="mod-title">Advanced Excel &amp; MIS Fundamentals</div><div class="mod-dur">Weeks 1–4 &nbsp;·&nbsp; 4 weeks</div></div>
@@ -232,136 +429,28 @@
   </div>
 </section>
 
-<!-- Tools & Technologies -->
-<section class="section courses" style="padding-top:0">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Tools &amp; Technologies</span>
-      <h2>The Exact Tools Employers Expect</h2>
-      <p>You'll be hands-on with every tool from day one — no theory-only learning.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill"><div class="ic">🐍</div>Python</div>
-      <div class="skill"><div class="ic">🗄️</div>SQL Server</div>
-      <div class="skill"><div class="ic">📊</div>Power BI</div>
-      <div class="skill"><div class="ic">📉</div>Tableau</div>
-      <div class="skill"><div class="ic">📗</div>Advanced Excel</div>
-      <div class="skill"><div class="ic">🔢</div>NumPy</div>
-      <div class="skill"><div class="ic">🐼</div>Pandas</div>
-      <div class="skill"><div class="ic">📈</div>Matplotlib</div>
-    </div>
-  </div>
-</section>
 
-<!-- Who Should Join -->
-<section class="section" style="background:var(--bg-soft)">
+<!-- Market Stats -->
+<section class="market-strip">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Is This Course For You?</span>
-      <h2>Who Should Enroll</h2>
-      <p>This program is designed for anyone ready to work with data — no prior coding experience required.</p>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <div class="audience-ic">🎓</div>
-        <div class="audience-title">Fresh Graduates</div>
-        <div class="audience-desc">B.Tech, BCA, BBA, B.Com, BA — build job-ready skills before your first role.</div>
+    <div class="market-inner">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Market Opportunity</span>
+        <h2>Data Analytics Is One of India's Most In-Demand Skills</h2>
+        <p>Every industry — from banking and e-commerce to healthcare and consulting — is hiring analysts who can turn data into decisions. Demand keeps outpacing the supply of skilled talent.</p>
+        <div class="market-salary">₹5 – ₹14 LPA</div>
+        <div class="market-salary-lbl">Typical salary range for Data Analyst roles — 1 to 4 years experience</div>
       </div>
-      <div class="audience-card">
-        <div class="audience-ic">💼</div>
-        <div class="audience-title">Working Professionals</div>
-        <div class="audience-desc">HR, Sales, Finance, Operations — add analytics to your profile and increase your value.</div>
-      </div>
-      <div class="audience-card">
-        <div class="audience-ic">📚</div>
-        <div class="audience-title">MBA / PGDM Students</div>
-        <div class="audience-desc">Combine management knowledge with Python and BI skills to target analytics leadership roles.</div>
-      </div>
-      <div class="audience-card">
-        <div class="audience-ic">💻</div>
-        <div class="audience-title">IT Professionals</div>
-        <div class="audience-desc">Software engineers and testers moving into data roles — leverage your technical foundation.</div>
+      <div class="mstat-grid">
+        <div class="mstat"><div class="mstat-num">25%</div><div class="mstat-lbl">Projected growth in analyst roles over the next 5 years</div></div>
+        <div class="mstat"><div class="mstat-num">1.4M+</div><div class="mstat-lbl">Analytics &amp; data job openings expected in India by 2027</div></div>
+        <div class="mstat"><div class="mstat-num">$16B</div><div class="mstat-lbl">India's analytics &amp; AI market projection by 2026</div></div>
+        <div class="mstat"><div class="mstat-num">40K+</div><div class="mstat-lbl">Open Data Analyst roles in India on LinkedIn at any time</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Career Outcomes -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Career Outcomes</span>
-      <h2>Roles You Can Target After This Course</h2>
-      <p>Our graduates work at top companies across e-commerce, finance, consulting, and tech.</p>
-    </div>
-    <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-role">📊 Data Analyst</div>
-        <div class="salary-pill">₹4 – 9 LPA</div>
-        <div class="outcome-cos">TCS, Wipro, Infosys, Accenture, Deloitte, Genpact, HCL</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-role">📣 Marketing Analyst</div>
-        <div class="salary-pill">₹5 – 10 LPA</div>
-        <div class="outcome-cos">Amazon, Flipkart, Meesho, Urban Company, Zomato, Swiggy</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-role">📦 Product Analyst</div>
-        <div class="salary-pill">₹6 – 12 LPA</div>
-        <div class="outcome-cos">Paytm, PhonePe, Ola, Razorpay, CRED, Zepto</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-role">📋 Business Analyst</div>
-        <div class="salary-pill">₹5 – 11 LPA</div>
-        <div class="outcome-cos">KPMG, EY, PwC, Mu Sigma, Tiger Analytics, Fractal</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-role">📈 BI Developer</div>
-        <div class="salary-pill">₹5 – 10 LPA</div>
-        <div class="outcome-cos">Cognizant, Capgemini, Tech Mahindra, Mphasis, Hexaware</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-role">🔍 Operations Analyst</div>
-        <div class="salary-pill">₹4 – 8 LPA</div>
-        <div class="outcome-cos">Hitachi, DHL, Mahindra, Max Life, ICICI, HDFC Bank</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Placement Companies -->
-<div class="companies-strip">
-  <div class="container">
-    <div class="co-label">Our students placed at</div>
-    <div class="co-logos">
-      <div class="co-logo">Hitachi</div><div class="co-logo">Zepto</div><div class="co-logo">Max Life</div>
-      <div class="co-logo">Infopro Learning</div><div class="co-logo">Berina Cosmetics</div><div class="co-logo">Spectrum</div>
-      <div class="co-logo">TCS</div><div class="co-logo">Wipro</div><div class="co-logo">HCL</div>
-      <div class="co-logo">Genpact</div><div class="co-logo">Deloitte</div><div class="co-logo">Accenture</div>
-    </div>
-  </div>
-</div>
-
-<!-- Testimonials -->
-<section class="section tmls" id="testimonials">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Student Stories</span>
-      <h2>Our Students, Placed &amp; Thriving</h2>
-      <p>Real people. Real results. Hear from those who've taken this exact course.</p>
-    </div>
-    <div class="tml-track" id="tmlTrack">
-      <div class="tml"><div class="head"><div class="av">PA</div><div><div class="name">Purushottam Anand</div><div class="role">MIS Executive · Max Life Insurance</div></div></div><div class="stars">★★★★★</div><p>Training in Excel, SQL, Power BI and Python shaped my skills. The structured approach helped me transition into a Data Analyst role within 3 months of completing the course.</p></div>
-      <div class="tml"><div class="head"><div class="av">AH</div><div><div class="name">Abhishek H S</div><div class="role">MIS Executive · Zepto</div></div></div><div class="stars">★★★★★</div><p>The course covered SQL, Power BI, Tableau and Advanced Excel thoroughly. Real case studies and projects made the learning stick. Strongly recommended for anyone wanting a data career.</p></div>
-      <div class="tml"><div class="head"><div class="av">RT</div><div><div class="name">Rameshwari Tailor</div><div class="role">Trainee Operations · Spectrum</div></div></div><div class="stars">★★★★★</div><p>Really good faculty for analytics, with doubt-solving at the end of each module and solid placement assistance. Got my first offer within 2 months of placement drives.</p></div>
-      <div class="tml"><div class="head"><div class="av">DM</div><div><div class="name">Deepak Mittal</div><div class="role">Sr. Executive · Infopro Learning</div></div></div><div class="stars">★★★★★</div><p>My experience with The XL Academy is amazing. The Python modules were explained step-by-step — even with zero coding background I was writing data pipelines by week 12.</p></div>
-    </div>
-    <div class="tml-nav">
-      <button onclick="scrollTml(-1)" aria-label="Previous">‹</button>
-      <button onclick="scrollTml(1)" aria-label="Next">›</button>
-    </div>
-  </div>
-</section>
 
 <!-- FAQ -->
 <section class="section">
@@ -376,7 +465,7 @@
       <details class="faq"><summary>How are the classes delivered?</summary><div class="ans">Both online (live sessions over video) and offline (at our Dwarka, New Delhi campus) options are available. The curriculum, projects, and placement support are identical across both modes.</div></details>
       <details class="faq"><summary>What kind of projects will I build?</summary><div class="ans">Two industry-grade capstone projects: an e-commerce analytics dashboard (end-to-end with Python + Power BI) and a financial performance report (SQL + Tableau). Both are portfolio-ready and interviewable.</div></details>
       <details class="faq"><summary>Is placement guaranteed?</summary><div class="ans">We provide 100% placement assistance — resume building, mock interviews, access to placement drives, and direct referrals. Final placement depends on student performance and effort during prep.</div></details>
-      <details class="faq"><summary>What is the fee for this course?</summary><div class="ans">Please contact our counsellors for the current fee structure, EMI options, and available scholarships. Call or WhatsApp +91 73036 09096 for a personalised fee breakdown.</div></details>
+      <details class="faq"><summary>Is EMI available?</summary><div class="ans">Yes — EMI from ₹2,950/month. Education loan options through partner NBFCs are also available. Call +91 73036 09096 for a personalised fee plan.</div></details>
     </div>
   </div>
 </section>
@@ -402,4 +491,3 @@
 <script src="components.js"></script>
 </body>
 </html>
-
