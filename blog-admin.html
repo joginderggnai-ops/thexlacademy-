@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Blog Admin — The XL Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/fav.png">
+<style>
+  body{background:var(--bg-soft)}
+  .adm-top{background:var(--navy);color:#fff;padding:16px 0}
+  .adm-top .container{display:flex;align-items:center;justify-content:space-between}
+  .adm-top h1{font-size:18px;font-weight:700}
+  .adm-top .who{font-size:13px;color:rgba(255,255,255,.6)}
+  .adm-wrap{max-width:960px;margin:0 auto;padding:28px 22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:var(--shadow)}
+  .login-card{max-width:400px;margin:8vh auto}
+  label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:12px 0 5px}
+  input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;background:#fff;box-sizing:border-box}
+  input:focus,select:focus,textarea:focus{border-color:var(--orange)}
+  textarea{min-height:180px;resize:vertical;line-height:1.6}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .btn2{border:0;border-radius:9px;padding:11px 18px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+  .btn-p{background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff}
+  .btn-p:hover{filter:brightness(1.05)}
+  .btn-g{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+  .btn-d{background:#fee2e2;color:#b91c1c}
+  .hint{font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
+  .msg{font-size:14px;font-weight:500;margin-top:12px;min-height:18px}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .toolbar h2{font-size:20px;color:var(--navy)}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{text-align:left;padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line)}
+  th{background:var(--bg-soft);font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+  tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;border-radius:50px;padding:2px 10px;font-size:11px;font-weight:600}
+  .pill.pub{background:#e6f9ee;color:#157a3c}.pill.dft{background:#fff3e4;color:#c85a12}
+  .act a{color:var(--orange-d);font-weight:600;cursor:pointer;margin-right:12px;font-size:13px}
+  .hidden{display:none}
+  @media(max-width:600px){.row2{grid-template-columns:1fr}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+
+<div class="adm-top">
+  <div class="container">
+    <h1>📝 Blog Admin — The XL Academy</h1>
+    <div id="whoBox" class="hidden"><span class="who">Signed in</span> &nbsp; <button class="btn2 btn-g" onclick="logout()">Logout</button></div>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div class="adm-wrap" id="loginView">
+  <div class="card login-card">
+    <h2 style="font-size:18px;color:var(--navy);margin-bottom:6px">Admin Login</h2>
+    <p style="font-size:13px;color:var(--muted)">Enter the admin password to manage blog posts.</p>
+    <label>Password</label>
+    <input type="password" id="pw" placeholder="Password" onkeydown="if(event.key==='Enter')login()">
+    <div style="margin-top:16px"><button class="btn2 btn-p" onclick="login()" style="width:100%">Sign In</button></div>
+    <div class="msg" id="loginMsg" style="text-align:center"></div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="adm-wrap hidden" id="dashView">
+  <div class="toolbar">
+    <h2>All Posts</h2>
+    <button class="btn2 btn-p" onclick="newPost()">+ New Post</button>
+  </div>
+  <div id="listWrap"><p style="color:var(--muted)">Loading…</p></div>
+</div>
+
+<!-- EDITOR -->
+<div class="adm-wrap hidden" id="editView">
+  <div class="toolbar">
+    <h2 id="editTitle">New Post</h2>
+    <button class="btn2 btn-g" onclick="showDash()">← Back</button>
+  </div>
+  <div class="card">
+    <input type="hidden" id="f_id">
+    <label>Title</label>
+    <input id="f_title" placeholder="Post title" onblur="autoslug()">
+    <div class="row2">
+      <div><label>Slug <span class="hint">(URL, auto-filled)</span></label><input id="f_slug" placeholder="post-url-slug"></div>
+      <div><label>Category</label><input id="f_category" placeholder="e.g. Career Tips"></div>
+    </div>
+    <div class="row2">
+      <div><label>Author</label><input id="f_author" placeholder="The XL Academy"></div>
+      <div><label>Date <span class="hint">(YYYY-MM-DD)</span></label><input id="f_date" placeholder="2026-07-19"></div>
+    </div>
+    <label>Cover Image URL <span class="hint">(optional)</span></label>
+    <input id="f_image" placeholder="https://… or images/…">
+    <label>Excerpt <span class="hint">(short summary shown on the blog list)</span></label>
+    <textarea id="f_excerpt" style="min-height:70px" placeholder="One or two lines summarising the post…"></textarea>
+    <label>Content <span class="hint">(HTML allowed — &lt;p&gt;, &lt;h2&gt;, &lt;ul&gt;&lt;li&gt;, &lt;a&gt;, &lt;img&gt;, &lt;strong&gt;…)</span></label>
+    <textarea id="f_content" placeholder="&lt;p&gt;Write your post here…&lt;/p&gt;"></textarea>
+    <label>Status</label>
+    <select id="f_status"><option value="published">Published</option><option value="draft">Draft</option></select>
+    <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
+      <button class="btn2 btn-p" onclick="savePost()">Save Post</button>
+      <button class="btn2 btn-g" onclick="showDash()">Cancel</button>
+      <button class="btn2 btn-d hidden" id="delBtn" onclick="deleteCurrent()">Delete</button>
+    </div>
+    <div class="msg" id="editMsg"></div>
+  </div>
+</div>
+
+<script>
+// Paste your Blog Apps Script Web App URL here (same as blog.html)
+var BLOG_ENDPOINT = 'PASTE_YOUR_BLOG_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+var PW = sessionStorage.getItem('xlblog_pw') || '';
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function show(id){['loginView','dashView','editView'].forEach(function(v){document.getElementById(v).classList.toggle('hidden',v!==id);});}
+function configured(){ return BLOG_ENDPOINT && BLOG_ENDPOINT.indexOf('PASTE_')!==0; }
+
+function api(body){
+  return fetch(BLOG_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json();});
+}
+
+function login(){
+  var msg=document.getElementById('loginMsg');
+  if(!configured()){ msg.style.color='#b91c1c'; msg.textContent='Set BLOG_ENDPOINT in blog-admin.html first.'; return; }
+  var pw=document.getElementById('pw').value;
+  msg.style.color='var(--muted)'; msg.textContent='Checking…';
+  fetch(BLOG_ENDPOINT+'?action=auth&password='+encodeURIComponent(pw))
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d && d.ok){ PW=pw; sessionStorage.setItem('xlblog_pw',pw); enter(); }
+      else { msg.style.color='#b91c1c'; msg.textContent='Wrong password.'; }
+    })
+    .catch(function(){ msg.style.color='#b91c1c'; msg.textContent='Login failed — check the endpoint URL.'; });
+}
+function logout(){ PW=''; sessionStorage.removeItem('xlblog_pw'); document.getElementById('whoBox').classList.add('hidden'); show('loginView'); }
+function enter(){ document.getElementById('whoBox').classList.remove('hidden'); showDash(); }
+
+function showDash(){ show('dashView'); loadPosts(); }
+
+function loadPosts(){
+  var wrap=document.getElementById('listWrap');
+  wrap.innerHTML='<p style="color:var(--muted)">Loading…</p>';
+  fetch(BLOG_ENDPOINT+'?action=all&password='+encodeURIComponent(PW))
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.error){ wrap.innerHTML='<p style="color:#b91c1c">'+esc(d.error)+'</p>'; return; }
+      var posts=(d.posts||[]).slice().reverse();
+      if(!posts.length){ wrap.innerHTML='<p style="color:var(--muted)">No posts yet. Click “+ New Post”.</p>'; return; }
+      var rows=posts.map(function(p){
+        return '<tr><td><strong>'+esc(p.title)+'</strong><div class="hint">/'+esc(p.slug)+'</div></td>'
+          +'<td class="hide-sm">'+esc(p.category||'')+'</td>'
+          +'<td class="hide-sm">'+esc(p.date||'')+'</td>'
+          +'<td><span class="pill '+(p.status==='published'?'pub':'dft')+'">'+esc(p.status||'draft')+'</span></td>'
+          +'<td class="act"><a onclick=\'editPost('+JSON.stringify(JSON.stringify(p))+')\'>Edit</a>'
+          +'<a href="blog-post?slug='+encodeURIComponent(p.slug||p.id)+'" target="_blank">View</a></td></tr>';
+      }).join('');
+      wrap.innerHTML='<table><thead><tr><th>Title</th><th class="hide-sm">Category</th><th class="hide-sm">Date</th><th>Status</th><th>Actions</th></tr></thead><tbody>'+rows+'</tbody></table>';
+    })
+    .catch(function(){ wrap.innerHTML='<p style="color:#b91c1c">Could not load posts.</p>'; });
+}
+
+function fill(p){
+  document.getElementById('f_id').value=p.id||'';
+  document.getElementById('f_title').value=p.title||'';
+  document.getElementById('f_slug').value=p.slug||'';
+  document.getElementById('f_category').value=p.category||'';
+  document.getElementById('f_author').value=p.author||'';
+  document.getElementById('f_date').value=p.date||'';
+  document.getElementById('f_image').value=p.image||'';
+  document.getElementById('f_excerpt').value=p.excerpt||'';
+  document.getElementById('f_content').value=p.content||'';
+  document.getElementById('f_status').value=p.status||'published';
+  document.getElementById('editMsg').textContent='';
+}
+function newPost(){
+  fill({author:'The XL Academy',status:'published',date:new Date().toISOString().slice(0,10)});
+  document.getElementById('editTitle').textContent='New Post';
+  document.getElementById('delBtn').classList.add('hidden');
+  show('editView');
+}
+function editPost(json){
+  var p=JSON.parse(json);
+  fill(p);
+  document.getElementById('editTitle').textContent='Edit Post';
+  document.getElementById('delBtn').classList.remove('hidden');
+  show('editView');
+}
+function autoslug(){
+  var s=document.getElementById('f_slug');
+  if(s.value.trim()) return;
+  s.value=document.getElementById('f_title').value.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').substring(0,80);
+}
+function collect(){
+  return {id:document.getElementById('f_id').value,title:document.getElementById('f_title').value,
+    slug:document.getElementById('f_slug').value,category:document.getElementById('f_category').value,
+    author:document.getElementById('f_author').value,date:document.getElementById('f_date').value,
+    image:document.getElementById('f_image').value,excerpt:document.getElementById('f_excerpt').value,
+    content:document.getElementById('f_content').value,status:document.getElementById('f_status').value};
+}
+function savePost(){
+  var msg=document.getElementById('editMsg');
+  var p=collect();
+  if(!p.title.trim()){ msg.style.color='#b91c1c'; msg.textContent='Title is required.'; return; }
+  autoslug();
+  p.slug=document.getElementById('f_slug').value;
+  msg.style.color='var(--muted)'; msg.textContent='Saving…';
+  var body={password:PW, action:p.id?'update':'create', id:p.id, post:p};
+  api(body).then(function(d){
+    if(d.result==='success'){ msg.style.color='#157a3c'; msg.textContent='✓ Saved.'; setTimeout(showDash,600); }
+    else { msg.style.color='#b91c1c'; msg.textContent='Error: '+(d.error||'save failed'); }
+  }).catch(function(){ msg.style.color='#b91c1c'; msg.textContent='Save failed (network/endpoint).'; });
+}
+function deleteCurrent(){
+  var id=document.getElementById('f_id').value;
+  if(!id) return;
+  if(!confirm('Delete this post permanently?')) return;
+  var msg=document.getElementById('editMsg');
+  msg.style.color='var(--muted)'; msg.textContent='Deleting…';
+  api({password:PW,action:'delete',id:id}).then(function(d){
+    if(d.result==='success'){ showDash(); }
+    else { msg.style.color='#b91c1c'; msg.textContent='Error: '+(d.error||'delete failed'); }
+  }).catch(function(){ msg.style.color='#b91c1c'; msg.textContent='Delete failed.'; });
+}
+
+// Auto-login if a session password exists
+if(PW && configured()){
+  fetch(BLOG_ENDPOINT+'?action=auth&password='+encodeURIComponent(PW))
+    .then(function(r){return r.json();})
+    .then(function(d){ if(d&&d.ok){ enter(); } else { logout(); } })
+    .catch(function(){});
+}
+</script>
+</body>
+</html>

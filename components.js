@@ -49,6 +49,7 @@
         </ul>
       </li>
       <li><a href="placement">Placement</a></li>
+      <li><a href="blog">Blog</a></li>
       <li><a href="enroll">Enroll Now</a></li>
       <li class="has-drop"><a href="#">More</a>
         <ul class="dropdown">
