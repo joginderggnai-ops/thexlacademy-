@@ -1,12 +1,60 @@
-Options -MultiViews
+# ============================================================
+#  The XL Academy — Apache config (Hostinger / cPanel shared hosting)
+# ============================================================
+
+Options -MultiViews -Indexes
 RewriteEngine On
 
-# Serve index.html for root
+# Serve index.html for the root and directories
 DirectoryIndex index.html
 
-# Skip if file or directory already exists
+# ---- Force HTTPS ----
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---- Redirect /page.html -> /page (clean URL, avoids duplicate content) ----
+RewriteCond %{THE_REQUEST} \s/+([^.\s?]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# ---- Map /page -> /page.html internally ----
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^.]+?)/?$ $1.html [NC,L]
 
-# Map /page-name → /page-name.html
-RewriteRule ^([^\.]+)/?$ $1.html [NC,L]
+# ---- Custom error page ----
+ErrorDocument 404 /404.html
+
+# ============================================================
+#  Performance — compression
+# ============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json image/svg+xml
+</IfModule>
+
+# ============================================================
+#  Performance — browser caching
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html               "access plus 0 seconds"
+  ExpiresByType text/css                "access plus 1 month"
+  ExpiresByType application/javascript  "access plus 1 month"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType image/x-icon            "access plus 1 year"
+  ExpiresByType font/woff2              "access plus 1 year"
+</IfModule>
+
+# ============================================================
+#  Basic security headers
+# ============================================================
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
