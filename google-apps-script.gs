@@ -26,6 +26,23 @@ var SHEET_NAME   = 'Leads';                 // tab name; created if missing
 var NOTIFY_EMAIL = 'support@thexlacademy.com'; // primary recipient
 var CC_EMAILS    = 'Analyticsproschool@gmail.com, masteranalytics.india@gmail.com'; // cc
 
+/* ---- Shared email template helpers ---- */
+function esc_(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function row_(label,value){
+  return '<tr><td style="padding:9px 0;border-bottom:1px solid #eef1f7;color:#5b6478;width:150px;vertical-align:top;font-size:13px">'+esc_(label)+'</td>'
+       + '<td style="padding:9px 0;border-bottom:1px solid #eef1f7;color:#1c2236;font-weight:600;font-size:14px">'+esc_(value)+'</td></tr>';
+}
+function shell_(title,intro,rows,note){
+  return '<div style="font-family:Arial,Helvetica,sans-serif;background:#f4f6fb;padding:24px">'
+   + '<div style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #e7eaf1;border-radius:10px;overflow:hidden">'
+   + '<div style="background:#1B2B6B;padding:20px 28px"><div style="font-size:18px;font-weight:bold;color:#ffffff">The XL Academy</div>'
+   + '<div style="font-size:13px;color:#c4cdec;margin-top:3px">'+esc_(title)+'</div></div>'
+   + '<div style="padding:24px 28px"><p style="margin:0 0 14px;font-size:14px;color:#333333">'+esc_(intro)+'</p>'
+   + '<table style="width:100%;border-collapse:collapse">'+rows+'</table>'+(note||'')+'</div>'
+   + '<div style="background:#f4f6fb;padding:14px 28px;font-size:12px;color:#5b6478;text-align:center">Submitted via thexlacademy.com</div>'
+   + '</div></div>';
+}
+
 function doPost(e) {
   try {
     var d = (e && e.parameter) ? e.parameter : {};
@@ -48,18 +65,18 @@ function doPost(e) {
       d.source || ''
     ]);
 
+    var rows = row_('Name', d.name) + row_('Phone', d.mobile) + row_('Email', d.email)
+             + row_('Preferred City', d.city) + row_('Source', d.source) + row_('Time', ts);
     MailApp.sendEmail({
       to: NOTIFY_EMAIL,
       cc: CC_EMAILS,
-      subject: 'New Demo Enquiry — ' + (d.name || 'Website'),
+      replyTo: d.email || NOTIFY_EMAIL,
+      subject: 'Website New Enquiry — Popup',
       body:
         'New free demo class enquiry from the website:\n\n' +
-        'Name:           ' + (d.name || '') + '\n' +
-        'Phone:          ' + (d.mobile || '') + '\n' +
-        'Email:          ' + (d.email || '') + '\n' +
-        'Preferred City: ' + (d.city || '') + '\n' +
-        'Source:         ' + (d.source || '') + '\n' +
-        'Time:           ' + ts + '\n'
+        'Name: ' + (d.name || '') + '\nPhone: ' + (d.mobile || '') + '\nEmail: ' + (d.email || '') +
+        '\nPreferred City: ' + (d.city || '') + '\nSource: ' + (d.source || '') + '\nTime: ' + ts + '\n',
+      htmlBody: shell_('New Demo Class Enquiry', 'A new free demo class enquiry was submitted from the website.', rows, '')
     });
 
     return ContentService
