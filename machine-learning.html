@@ -71,7 +71,7 @@
     <div class="highlights-grid">
       <div class="highlight-item"><div class="highlight-num">10+</div><div class="highlight-lbl">Algorithms</div></div>
       <div class="highlight-item"><div class="highlight-num">3</div><div class="highlight-lbl">Capstone Projects</div></div>
-      <div class="highlight-item"><div class="highlight-num">6</div><div class="highlight-lbl">Curriculum Modules</div></div>
+      <div class="highlight-item"><div class="highlight-num">7</div><div class="highlight-lbl">Curriculum Modules</div></div>
       <div class="highlight-item"><div class="highlight-num">100%</div><div class="highlight-lbl">Placement Assistance</div></div>
     </div>
   </div>
@@ -83,25 +83,25 @@
     <div class="section-head">
       <span class="eyebrow">Course Curriculum</span>
       <h2>What You'll Learn — Module by Module</h2>
-      <p>A focused 3-month program covering every ML algorithm and technique that appears in data science job descriptions.</p>
+      <p>A complete machine-learning program — from data preprocessing to regression, classification, clustering, NLP, and Flask deployment. Click any module to expand.</p>
     </div>
     <div class="curriculum-wrap">
 
       <details class="module" open>
         <summary>
           <div class="mod-num">01</div>
-          <div class="mod-title-wrap"><div class="mod-title">Python &amp; Stats Refresher</div><div class="mod-dur">Week 1–2</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Introduction &amp; Data Preprocessing</div><div class="mod-dur">Weeks 1–2</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Speed-run through Pandas, NumPy, and the probability/statistics you need before writing your first model.</p>
+          <p class="mod-desc">What ML really is, how it differs from AI and Deep Learning, and how to prepare raw data for modelling.</p>
           <div class="topic-tags">
-            <span class="topic-tag">Descriptive Statistics</span>
-            <span class="topic-tag">Probability Basics</span>
-            <span class="topic-tag">Distributions</span>
-            <span class="topic-tag">Hypothesis Testing</span>
-            <span class="topic-tag">Pandas EDA</span>
-            <span class="topic-tag">NumPy Arrays</span>
+            <span class="topic-tag">ML vs Deep Learning vs AI</span>
+            <span class="topic-tag">Supervised / Unsupervised / Reinforcement</span>
+            <span class="topic-tag">Importing Datasets &amp; Libraries</span>
+            <span class="topic-tag">Handling Missing Data</span>
+            <span class="topic-tag">Categorical Data Encoding</span>
+            <span class="topic-tag">Train / Test Split</span>
           </div>
         </div>
       </details>
@@ -109,18 +109,18 @@
       <details class="module">
         <summary>
           <div class="mod-num">02</div>
-          <div class="mod-title-wrap"><div class="mod-title">Supervised Learning — Regression</div><div class="mod-dur">Weeks 3–4</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Regression</div><div class="mod-dur">Weeks 3–5</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Predict continuous values. Understand every assumption behind the models and when to use each.</p>
+          <p class="mod-desc">Predict continuous values — the maths and statistics behind regression, built up model by model in Python.</p>
           <div class="topic-tags">
-            <span class="topic-tag">Linear Regression</span>
-            <span class="topic-tag">Multiple Regression</span>
+            <span class="topic-tag">Simple Linear Regression</span>
+            <span class="topic-tag">Multiple Linear Regression</span>
             <span class="topic-tag">Polynomial Regression</span>
-            <span class="topic-tag">Ridge &amp; Lasso</span>
-            <span class="topic-tag">Evaluation Metrics (RMSE, R²)</span>
-            <span class="topic-tag">Feature Scaling</span>
+            <span class="topic-tag">Regression vs Correlation</span>
+            <span class="topic-tag">R² &amp; Adjusted R²</span>
+            <span class="topic-tag">Interpreting Coefficients</span>
           </div>
         </div>
       </details>
@@ -128,20 +128,17 @@
       <details class="module">
         <summary>
           <div class="mod-num">03</div>
-          <div class="mod-title-wrap"><div class="mod-title">Supervised Learning — Classification</div><div class="mod-dur">Weeks 5–7</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Classification</div><div class="mod-dur">Weeks 6–7</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Classify emails, predict churn, detect fraud — the most common ML tasks in industry.</p>
+          <p class="mod-desc">The most common ML task in industry — predict churn, detect fraud, and classify records.</p>
           <div class="topic-tags">
-            <span class="topic-tag">Logistic Regression</span>
-            <span class="topic-tag">Decision Trees</span>
+            <span class="topic-tag">K-Nearest Neighbors (KNN)</span>
+            <span class="topic-tag">Naive Bayes &amp; Bayes Theorem</span>
+            <span class="topic-tag">Decision Tree Classification</span>
             <span class="topic-tag">Random Forest</span>
-            <span class="topic-tag">Gradient Boosting (XGBoost)</span>
-            <span class="topic-tag">KNN</span>
-            <span class="topic-tag">SVM</span>
-            <span class="topic-tag">Confusion Matrix</span>
-            <span class="topic-tag">ROC-AUC</span>
+            <span class="topic-tag">Logistic Regression</span>
           </div>
         </div>
       </details>
@@ -149,18 +146,20 @@
       <details class="module">
         <summary>
           <div class="mod-num">04</div>
-          <div class="mod-title-wrap"><div class="mod-title">Unsupervised Learning</div><div class="mod-dur">Weeks 8–9</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">SVR, Model Evaluation &amp; Selection</div><div class="mod-dur">Weeks 8–9</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Discover hidden patterns in data without labels — used in customer segmentation and anomaly detection.</p>
+          <p class="mod-desc">Support Vector Regression, then measure, tune, and pick the best model on real data.</p>
           <div class="topic-tags">
-            <span class="topic-tag">K-Means Clustering</span>
-            <span class="topic-tag">Hierarchical Clustering</span>
-            <span class="topic-tag">DBSCAN</span>
-            <span class="topic-tag">PCA — Dimensionality Reduction</span>
-            <span class="topic-tag">t-SNE Visualisation</span>
-            <span class="topic-tag">Silhouette Score</span>
+            <span class="topic-tag">Support Vector Regression (SVR)</span>
+            <span class="topic-tag">Confusion Matrix</span>
+            <span class="topic-tag">False Positives / Negatives</span>
+            <span class="topic-tag">Accuracy Paradox</span>
+            <span class="topic-tag">K-Fold Cross Validation</span>
+            <span class="topic-tag">GridSearchCV Tuning</span>
+            <span class="topic-tag">Outlier Detection</span>
+            <span class="topic-tag">Imbalanced Data (SMOTE)</span>
           </div>
         </div>
       </details>
@@ -168,18 +167,17 @@
       <details class="module">
         <summary>
           <div class="mod-num">05</div>
-          <div class="mod-title-wrap"><div class="mod-title">Model Deployment Basics</div><div class="mod-dur">Week 10</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Unsupervised Learning</div><div class="mod-dur">Weeks 10–11</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Save, load, and serve models — bridging the gap between a notebook and a production endpoint.</p>
+          <p class="mod-desc">Find hidden structure without labels — clustering and association rule mining.</p>
           <div class="topic-tags">
-            <span class="topic-tag">Pickle &amp; Joblib</span>
-            <span class="topic-tag">Flask API Basics</span>
-            <span class="topic-tag">Streamlit Dashboard</span>
-            <span class="topic-tag">Model Versioning</span>
-            <span class="topic-tag">Input Validation</span>
-            <span class="topic-tag">REST Endpoint</span>
+            <span class="topic-tag">K-Means Clustering</span>
+            <span class="topic-tag">Selecting Number of Clusters</span>
+            <span class="topic-tag">Hierarchical Clustering &amp; Dendrograms</span>
+            <span class="topic-tag">Apriori</span>
+            <span class="topic-tag">Eclat</span>
           </div>
         </div>
       </details>
@@ -187,17 +185,35 @@
       <details class="module">
         <summary>
           <div class="mod-num">06</div>
-          <div class="mod-title-wrap"><div class="mod-title">Capstone Projects</div><div class="mod-dur">Weeks 11–13</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Reinforcement Learning &amp; NLP</div><div class="mod-dur">Week 12</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Three end-to-end projects on real datasets: customer churn prediction, house price regression, and a clustering project.</p>
+          <p class="mod-desc">Reward-based learning and the foundations of Natural Language Processing.</p>
           <div class="topic-tags">
-            <span class="topic-tag">Customer Churn Prediction (Project 1)</span>
-            <span class="topic-tag">House Price Prediction (Project 2)</span>
-            <span class="topic-tag">Customer Segmentation (Project 3)</span>
-            <span class="topic-tag">Model Report</span>
-            <span class="topic-tag">Resume &amp; LinkedIn Prep</span>
+            <span class="topic-tag">RL Terminologies</span>
+            <span class="topic-tag">Markov Decision Process</span>
+            <span class="topic-tag">Q-Learning (Python)</span>
+            <span class="topic-tag">Tokenization &amp; Stemming</span>
+            <span class="topic-tag">Lemmatization</span>
+            <span class="topic-tag">Bag of Words &amp; TF-IDF</span>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>
+          <div class="mod-num">07</div>
+          <div class="mod-title-wrap"><div class="mod-title">Deployment &amp; Project</div><div class="mod-dur">Weeks 13–14</div></div>
+          <span class="mod-arrow">+</span>
+        </summary>
+        <div class="mod-body">
+          <p class="mod-desc">Take a model from notebook to a live endpoint with a full Python + Flask project.</p>
+          <div class="topic-tags">
+            <span class="topic-tag">Python Project</span>
+            <span class="topic-tag">Flask Server Deployment</span>
+            <span class="topic-tag">End-to-End ML Pipeline</span>
+            <span class="topic-tag">Q&amp;A &amp; Interview Prep</span>
           </div>
         </div>
       </details>

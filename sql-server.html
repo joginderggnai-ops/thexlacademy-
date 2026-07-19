@@ -72,7 +72,7 @@
     <div class="highlights-grid">
       <div class="highlight-item"><div class="highlight-num">40+</div><div class="highlight-lbl">SQL Concepts</div></div>
       <div class="highlight-item"><div class="highlight-num">2</div><div class="highlight-lbl">Projects</div></div>
-      <div class="highlight-item"><div class="highlight-num">5</div><div class="highlight-lbl">Curriculum Modules</div></div>
+      <div class="highlight-item"><div class="highlight-num">6</div><div class="highlight-lbl">Curriculum Modules</div></div>
       <div class="highlight-item"><div class="highlight-num">100%</div><div class="highlight-lbl">Placement Assistance</div></div>
     </div>
   </div>
@@ -84,26 +84,25 @@
     <div class="section-head">
       <span class="eyebrow">Course Curriculum</span>
       <h2>What You'll Learn — Module by Module</h2>
-      <p>A focused 6-week program covering the SQL skills that appear in every data and business analyst job description — from first query to stored procedures and analytics projects.</p>
+      <p>A 30-hour program covering T-SQL end to end — from RDBMS basics and normalization to joins, sub-queries, functions, views, stored procedures, and triggers. Click any module to expand.</p>
     </div>
     <div class="curriculum-wrap">
 
       <details class="module" open>
         <summary>
           <div class="mod-num">01</div>
-          <div class="mod-title-wrap"><div class="mod-title">SQL Fundamentals</div><div class="mod-dur">Week 1 &nbsp;·&nbsp; 1 week</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">SQL &amp; RDBMS Foundations</div><div class="mod-dur">~4 hrs</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Start querying from day one. Every analyst uses these commands daily — get them fully internalized.</p>
+          <p class="mod-desc">How relational databases work and the foundation statements of T-SQL.</p>
           <div class="topic-tags">
-            <span class="topic-tag">SELECT &amp; FROM</span>
-            <span class="topic-tag">WHERE Clause</span>
-            <span class="topic-tag">ORDER BY &amp; LIMIT</span>
-            <span class="topic-tag">DISTINCT</span>
-            <span class="topic-tag">Aliases</span>
-            <span class="topic-tag">NULL Handling</span>
-            <span class="topic-tag">Comparison Operators</span>
+            <span class="topic-tag">SQL Overview</span>
+            <span class="topic-tag">RDBMS Concepts</span>
+            <span class="topic-tag">Foundation Statements of T-SQL</span>
+            <span class="topic-tag">SELECT &amp; INSERT</span>
+            <span class="topic-tag">DDL / DML / DCL / DQL</span>
+            <span class="topic-tag">SQL Data Types</span>
           </div>
         </div>
       </details>
@@ -111,18 +110,18 @@
       <details class="module">
         <summary>
           <div class="mod-num">02</div>
-          <div class="mod-title-wrap"><div class="mod-title">Aggregations &amp; Grouping</div><div class="mod-dur">Week 2 &nbsp;·&nbsp; 1 week</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">DDL, DML &amp; Normalization</div><div class="mod-dur">~6 hrs</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Summarise data across dimensions — the core of any analytics query.</p>
+          <p class="mod-desc">Create and modify database objects, manipulate records, and design clean schemas.</p>
           <div class="topic-tags">
-            <span class="topic-tag">GROUP BY &amp; HAVING</span>
-            <span class="topic-tag">COUNT/SUM/AVG/MIN/MAX</span>
-            <span class="topic-tag">CASE Statements</span>
-            <span class="topic-tag">Conditional Aggregation</span>
-            <span class="topic-tag">Date Functions</span>
-            <span class="topic-tag">String Functions</span>
+            <span class="topic-tag">Create Database &amp; Table</span>
+            <span class="topic-tag">Alter Statement</span>
+            <span class="topic-tag">Drop / Delete / Update</span>
+            <span class="topic-tag">Arithmetic, Comparison &amp; Logical Operators</span>
+            <span class="topic-tag">Normalization — 1NF</span>
+            <span class="topic-tag">2NF &amp; 3NF</span>
           </div>
         </div>
       </details>
@@ -130,19 +129,19 @@
       <details class="module">
         <summary>
           <div class="mod-num">03</div>
-          <div class="mod-title-wrap"><div class="mod-title">Joins &amp; Relationships</div><div class="mod-dur">Week 3 &nbsp;·&nbsp; 1 week</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Clauses, Joins &amp; Constraints</div><div class="mod-dur">~8 hrs</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Real-world databases span multiple tables. Master every join type and know when to use each.</p>
+          <p class="mod-desc">Filter, sort, group, and combine data across multiple related tables.</p>
           <div class="topic-tags">
-            <span class="topic-tag">INNER JOIN</span>
-            <span class="topic-tag">LEFT &amp; RIGHT JOIN</span>
-            <span class="topic-tag">FULL OUTER JOIN</span>
-            <span class="topic-tag">Self Joins</span>
-            <span class="topic-tag">Cross Joins</span>
-            <span class="topic-tag">Joining 3+ Tables</span>
-            <span class="topic-tag">ERD Reading</span>
+            <span class="topic-tag">WHERE, ORDER BY, GROUP BY, HAVING</span>
+            <span class="topic-tag">TOP &amp; LIKE</span>
+            <span class="topic-tag">UNION &amp; UNION ALL</span>
+            <span class="topic-tag">INNER / LEFT / RIGHT / FULL Join</span>
+            <span class="topic-tag">SELF &amp; CARTESIAN Join</span>
+            <span class="topic-tag">PRIMARY / FOREIGN KEY</span>
+            <span class="topic-tag">UNIQUE, CHECK, DEFAULT, NULL</span>
           </div>
         </div>
       </details>
@@ -150,19 +149,18 @@
       <details class="module">
         <summary>
           <div class="mod-num">04</div>
-          <div class="mod-title-wrap"><div class="mod-title">Advanced SQL</div><div class="mod-dur">Weeks 4–5 &nbsp;·&nbsp; 2 weeks</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Sub-Queries &amp; Functions</div><div class="mod-dur">~5 hrs</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Subqueries, CTEs, and window functions are what separate junior from senior analyst queries.</p>
+          <p class="mod-desc">Nested logic plus the built-in and user-defined functions analysts rely on.</p>
           <div class="topic-tags">
-            <span class="topic-tag">Subqueries (correlated &amp; non)</span>
-            <span class="topic-tag">Common Table Expressions (CTEs)</span>
-            <span class="topic-tag">ROW_NUMBER &amp; RANK</span>
-            <span class="topic-tag">LEAD &amp; LAG</span>
-            <span class="topic-tag">PARTITION BY</span>
-            <span class="topic-tag">Running Totals</span>
-            <span class="topic-tag">Pivoting Data</span>
+            <span class="topic-tag">Nested Sub-Queries</span>
+            <span class="topic-tag">Correlated Sub-Queries</span>
+            <span class="topic-tag">EXISTS Operator</span>
+            <span class="topic-tag">Aggregate &amp; String Functions</span>
+            <span class="topic-tag">Date Functions, CONVERT, FORMAT, ISNULL</span>
+            <span class="topic-tag">UDF — Scalar &amp; Table-valued</span>
           </div>
         </div>
       </details>
@@ -170,18 +168,36 @@
       <details class="module">
         <summary>
           <div class="mod-num">05</div>
-          <div class="mod-title-wrap"><div class="mod-title">Stored Procedures &amp; Projects</div><div class="mod-dur">Week 6 &nbsp;·&nbsp; 1 week</div></div>
+          <div class="mod-title-wrap"><div class="mod-title">Indexes, Views &amp; Stored Procedures</div><div class="mod-dur">~5 hrs</div></div>
           <span class="mod-arrow">+</span>
         </summary>
         <div class="mod-body">
-          <p class="mod-desc">Automate database logic and wrap up with two analytics projects using a real SQL Server database.</p>
+          <p class="mod-desc">Speed up queries, reuse logic, and automate with server-side programming.</p>
           <div class="topic-tags">
-            <span class="topic-tag">CREATE PROCEDURE</span>
-            <span class="topic-tag">Parameters &amp; Variables</span>
+            <span class="topic-tag">Understanding Indexes</span>
+            <span class="topic-tag">CREATE INDEX</span>
+            <span class="topic-tag">Simple &amp; Complex Views</span>
+            <span class="topic-tag">Views as Filters</span>
+            <span class="topic-tag">Stored Procedures (Create / Alter / Drop)</span>
+            <span class="topic-tag">Handling Errors</span>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>
+          <div class="mod-num">06</div>
+          <div class="mod-title-wrap"><div class="mod-title">Transactions &amp; Triggers</div><div class="mod-dur">~2 hrs</div></div>
+          <span class="mod-arrow">+</span>
+        </summary>
+        <div class="mod-body">
+          <p class="mod-desc">Keep data consistent and react automatically to changes.</p>
+          <div class="topic-tags">
+            <span class="topic-tag">Transactions &amp; ACID</span>
+            <span class="topic-tag">Commit, Rollback, Save Point</span>
+            <span class="topic-tag">Sequences &amp; Identity</span>
             <span class="topic-tag">Triggers</span>
-            <span class="topic-tag">Indexes Basics</span>
-            <span class="topic-tag">Sales Analytics Project</span>
-            <span class="topic-tag">Customer RFM Analysis Project</span>
+            <span class="topic-tag">INSERTED / DELETED Tables</span>
           </div>
         </div>
       </details>
