@@ -389,4 +389,14 @@ footer a:hover{color:var(--orange)}
   .highlights-grid{grid-template-columns:repeat(2,1fr)}
   .mod-body{padding-left:22px}
 }
+/* Mobile overrides for inline grid widths (branch batch cards, subject tool grids, maps) */
+@media(max-width:760px){
+  .skills-grid[style]{grid-template-columns:repeat(3,1fr)!important}
+}
+@media(max-width:600px){
+  .batch-grid[style]{grid-template-columns:1fr!important;max-width:420px!important}
+  .batch-grid{grid-template-columns:1fr!important}
+  .skills-grid[style]{grid-template-columns:repeat(2,1fr)!important}
+  iframe[src*="google.com/maps"]{height:300px}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
