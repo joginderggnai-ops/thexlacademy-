@@ -22,6 +22,7 @@
 .field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;background:#fff;box-sizing:border-box}
 .field textarea{min-height:90px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:#1a6be0}
+#admissionFormFull.attempted input:invalid,#admissionFormFull.attempted select:invalid,#admissionFormFull.attempted textarea:invalid{border-color:#e02424;background:#fff6f6}
 .field input[readonly]{background:#f1f4f9;color:var(--muted);cursor:not-allowed}
 .field input[type=file]{padding:8px 10px;background:#fff;font-size:13px;color:var(--muted)}
 .field input[type=file]::file-selector-button{font-family:inherit;font-size:13px;padding:6px 12px;margin-right:10px;border:1px solid var(--line);border-radius:7px;background:#f4f6fa;color:var(--ink);cursor:pointer}
@@ -205,7 +206,19 @@ document.getElementById('admissionFormFull').addEventListener('submit',function(
   var form=this, msg=document.getElementById('formMsgFull');
   var fail=function(t){msg.style.color='#e8650a';msg.textContent=t;};
 
-  if(!form.checkValidity()){fail('Please complete all required fields.');return;}
+  form.classList.add('attempted');
+  if(!form.checkValidity()){
+    var bad=form.querySelector(':invalid');
+    var lbl='a required field';
+    if(bad){
+      var fld=bad.closest('.field');
+      if(fld&&fld.querySelector('label')) lbl=fld.querySelector('label').textContent.replace(/\*+/g,'').replace(/\(.*?\)/g,'').trim();
+      bad.reportValidity();
+      bad.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    fail('Please fill: '+lbl);
+    return;
+  }
 
   // Validate each uploaded file: image only, max 2 MB
   var fileFields=[['photo','Photo'],['idProof','ID Proof'],['addressProof','Address Proof']];

@@ -49,6 +49,8 @@
 .field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;background:#fff;box-sizing:border-box}
 .field textarea{min-height:80px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:#1a6be0}
+#loanForm.attempted input:invalid,#loanForm.attempted select:invalid,#loanForm.attempted textarea:invalid{border-color:#e02424;background:#fff6f6}
+#loanForm.attempted .consent input:invalid{outline:2px solid #e02424;outline-offset:2px}
 .field input[readonly]{background:#f1f4f9;color:var(--muted);cursor:not-allowed}
 .field input[type=file]{padding:8px 10px;background:#fff;font-size:13px;color:var(--muted)}
 .field input[type=file]::file-selector-button{font-family:inherit;font-size:13px;padding:6px 12px;margin-right:10px;border:1px solid var(--line);border-radius:7px;background:#f4f6fa;color:var(--ink);cursor:pointer}
@@ -257,7 +259,7 @@
                 <option>MIS &amp; Reporting — 4 Months</option>
               </select>
             </div>
-            <div class="field"><label>Loan Amount <span class="req">*</span></label><input name="loanAmount" type="number" min="0" step="1000" required placeholder="Enter Loan Amount"></div>
+            <div class="field"><label>Loan Amount <span class="req">*</span></label><input name="loanAmount" type="number" min="0" step="any" required placeholder="Enter Loan Amount"></div>
           </div>
           <div class="field"><label>Address <span class="hint">(As per Aadhaar)</span></label><textarea name="address" placeholder="Enter Your Address"></textarea></div>
           <div class="field-row">
@@ -324,7 +326,20 @@ document.getElementById('loanForm').addEventListener('submit',function(e){
   var form=this, msg=document.getElementById('loanFormMsg');
   var fail=function(t){msg.style.color='#e8650a';msg.textContent=t;};
 
-  if(!form.checkValidity()){fail('Please complete all required fields.');return;}
+  form.classList.add('attempted');
+  if(!form.checkValidity()){
+    var bad=form.querySelector(':invalid');
+    var lbl='a required field';
+    if(bad){
+      var fld=bad.closest('.field');
+      if(fld&&fld.querySelector('label')) lbl=fld.querySelector('label').textContent.replace(/\*+/g,'').replace(/\(.*?\)/g,'').trim();
+      else if(bad.type==='checkbox') lbl='the Terms & Conditions consent';
+      bad.reportValidity();
+      bad.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    fail('Please fill: '+lbl);
+    return;
+  }
 
   // Image uploads: image only, max 2 MB
   var imgFields=[['aadhaarFront','Aadhaar Card (Front)'],['aadhaarBack','Aadhaar Card (Back)'],['panCard','PAN Card'],['photo','Passport size Photo']];
