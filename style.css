@@ -312,6 +312,8 @@ footer a:hover{color:var(--orange)}
 .pg-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(27,43,107,.06);transition:.2s}
 .pg-item:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
 .pg-item img{width:100%;height:auto;display:block}
+.pg-grid .pg-item:nth-child(n+13){display:none}
+.pg-grid.pg-expanded .pg-item:nth-child(n+13){display:block}
 @media(max-width:900px){.pg-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.pg-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
 
