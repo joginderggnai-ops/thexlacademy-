@@ -173,7 +173,7 @@ header.nav{position:sticky;top:0;z-index:60;background:#fff;box-shadow:0 2px 18p
 
 /* ---------- Footer ---------- */
 footer{background:var(--navy);color:#aeb8da;padding:64px 0 26px;font-size:14px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:34px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr 1fr;gap:34px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.12)}
 footer h4{color:#fff;font-size:15px;margin-bottom:16px;letter-spacing:.5px}
 footer ul{list-style:none;display:grid;gap:10px}
 footer a:hover{color:var(--orange)}
