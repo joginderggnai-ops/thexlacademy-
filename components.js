@@ -116,18 +116,18 @@
       <div>
         <h4>Policies</h4>
         <ul>
-          <li><a href="privacy-policy">Privacy Policy</a></li>
-          <li><a href="terms-conditions">Terms &amp; Conditions</a></li>
-          <li><a href="cancellation-refund">Cancellation &amp; Refund</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="cancellation-refund.html">Cancellation &amp; Refund</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <div>© 2026 The XL Academy. All rights reserved.</div>
       <div style="display:flex;gap:18px">
-        <a href="privacy-policy">Privacy Policy</a>
-        <a href="terms-conditions">Terms &amp; Conditions</a>
-        <a href="cancellation-refund">Refund Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="cancellation-refund.html">Refund Policy</a>
       </div>
     </div>
   </div>
@@ -162,7 +162,7 @@
         <div class="field"><label>Preferred City <span class="req">*</span></label><input name="city" type="text" required placeholder="e.g. Delhi, Mumbai, Bangalore..."></div>
         <button class="btn-submit" type="submit">Submit Enquiry →</button>
         <div class="form-msg" id="formMsg"></div>
-        <p class="modal-foot">By submitting, you agree to our <a href="terms-conditions">Terms</a> and <a href="privacy-policy">Privacy Policy</a>. We never spam.</p>
+        <p class="modal-foot">By submitting, you agree to our <a href="terms-conditions.html">Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>. We never spam.</p>
       </form>
     </div>
   </div>
