@@ -119,7 +119,7 @@
       <div style="display:flex;gap:18px">
         <a href="privacy-policy">Privacy Policy</a>
         <a href="terms-conditions">Terms &amp; Conditions</a>
-        <a href="#">Refund Policy</a>
+        <a href="cancellation-refund">Refund Policy</a>
       </div>
     </div>
   </div>
