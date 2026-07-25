@@ -383,18 +383,28 @@ footer a:hover{color:var(--orange)}
 }
 @media(max-width:520px){
   .container{padding:0 16px}
-  .stats-inner,.why-grid,.course-grid,.foot-grid,.blog-grid{grid-template-columns:1fr}
+  .why-grid,.course-grid,.foot-grid,.blog-grid{grid-template-columns:1fr}
+  /* stats look better as a 2×2 grid than a tall stack */
+  .stats-inner{grid-template-columns:1fr 1fr;padding:24px 16px;gap:12px}
+  .stats{margin-top:-28px}
+  .stat .num{font-size:30px}
+  .stat .lbl{font-size:11px}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .section{padding:56px 0}
+  .section{padding:52px 0}
+  .section-head{margin-bottom:34px}
   .cta-band{padding:36px 20px}
   .cta-band .row{flex-direction:column;align-items:stretch}
   .cta-band .row .btn{width:100%;justify-content:center}
   /* homepage hero */
-  .hero p{font-size:16px}
+  .hero-grid>div:first-child{padding:44px 0}
+  .hero p{font-size:16px;margin:16px 0 26px}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn{width:100%;justify-content:center}
   .hero-badges{gap:16px}
   .hero-badges b{font-size:22px}
+  /* gallery slider */
+  .gs-item{height:200px}
+  .tml-nav{margin-top:18px}
   /* testimonials — fit card to viewport */
   .tml{flex:0 0 84vw;padding:22px}
   /* course page */
@@ -408,6 +418,19 @@ footer a:hover{color:var(--orange)}
   .outcomes-grid{grid-template-columns:1fr}
   .highlights-grid{grid-template-columns:repeat(2,1fr)}
   .mod-body{padding-left:22px}
+}
+/* Small-phone tweaks: topbar overflow + oversized headings */
+@media(max-width:600px){
+  .topbar .container{justify-content:center;gap:0}
+  .topbar .tb-right{gap:16px;font-size:12px}
+}
+@media(max-width:400px){
+  .topbar .tb-right a[href^="mailto"]{display:none}
+  .hero h1{font-size:27px}
+  .section-head h2{font-size:24px}
+  .section-head p{font-size:15px}
+  .stat .num{font-size:26px}
+  .gs-item{flex-basis:88vw;height:186px}
 }
 /* Mobile overrides for inline grid widths (branch batch cards, subject tool grids, maps) */
 @media(max-width:760px){
