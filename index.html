@@ -16,7 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260725h">
+<link rel="stylesheet" href="style.css?v=20260725i">
 <link rel="icon" type="image/png" href="images/fav.png"><link rel="apple-touch-icon" href="images/fav.png">
 </head>
 <body>
@@ -165,7 +165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- Life at XL — auto-scroll gallery slider -->
+<!-- Life at XL — slider (same style as reviews) -->
 <section class="section gallery-strip">
   <div class="container">
     <div class="section-head">
@@ -173,9 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>Inside Our Classrooms</h2>
       <p>Real batches, real training — a glimpse of the live sessions happening across our centres.</p>
     </div>
-  </div>
-  <div class="gs-viewport">
-    <div class="gs-track">
+    <div class="gs-track" id="galTrack">
       <div class="gs-item"><img src="images/gallery/g1.jpg" alt="The XL Academy training session" loading="lazy"></div>
       <div class="gs-item"><img src="images/gallery/g2.jpg" alt="The XL Academy training session" loading="lazy"></div>
       <div class="gs-item"><img src="images/gallery/g3.jpg" alt="The XL Academy training session" loading="lazy"></div>
@@ -192,23 +190,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="gs-item"><img src="images/gallery/g14.jpg" alt="The XL Academy training session" loading="lazy"></div>
       <div class="gs-item"><img src="images/gallery/g15.jpg" alt="The XL Academy training session" loading="lazy"></div>
       <div class="gs-item"><img src="images/gallery/g16.jpg" alt="The XL Academy training session" loading="lazy"></div>
-      <!-- duplicate set for seamless loop -->
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g1.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g2.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g3.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g4.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g5.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g6.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g7.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g8.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g9.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g10.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g11.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g12.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g13.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g14.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g15.jpg" alt="" loading="lazy"></div>
-      <div class="gs-item" aria-hidden="true"><img src="images/gallery/g16.jpg" alt="" loading="lazy"></div>
+    </div>
+    <div class="tml-nav">
+      <button onclick="scrollGal(-1)" aria-label="Previous">‹</button>
+      <button onclick="scrollGal(1)" aria-label="Next">›</button>
     </div>
   </div>
 </section>
@@ -295,7 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="site-footer"></div>
 
-<script src="components.js?v=20260725h"></script>
+<script src="components.js?v=20260725i"></script>
 <script>
 // Animated counters
 const counters=document.querySelectorAll('[data-count]');
@@ -333,6 +318,38 @@ counters.forEach(c=>io.observe(c));
   track.addEventListener('pointerdown',function(){paused=true;});
   window.addEventListener('pointerup',function(){paused=false;});
 
+  (function loop(){
+    if(!paused){
+      track.scrollLeft+=speed;
+      if(track.scrollLeft>=half) track.scrollLeft-=half;
+    }
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// Prev/Next arrows for the gallery slider
+window.scrollGal=function(dir){
+  var t=document.getElementById('galTrack');
+  if(t) t.scrollBy({left:dir*402,behavior:'smooth'});
+};
+
+// Auto-scrolling gallery (same seamless loop as testimonials)
+(function(){
+  var track=document.getElementById('galTrack');
+  if(!track) return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  track.style.scrollSnapType='none';
+  Array.prototype.slice.call(track.children).forEach(function(node){
+    track.appendChild(node.cloneNode(true));
+  });
+  var half=track.scrollWidth/2;
+  var speed=0.5;
+  var paused=false;
+  window.addEventListener('resize',function(){half=track.scrollWidth/2;});
+  track.addEventListener('mouseenter',function(){paused=true;});
+  track.addEventListener('mouseleave',function(){paused=false;});
+  track.addEventListener('pointerdown',function(){paused=true;});
+  window.addEventListener('pointerup',function(){paused=false;});
   (function loop(){
     if(!paused){
       track.scrollLeft+=speed;

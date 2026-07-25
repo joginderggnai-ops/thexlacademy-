@@ -171,16 +171,12 @@ header.nav{position:sticky;top:0;z-index:60;background:#fff;box-shadow:0 2px 18p
 .cta-band .btn-primary{background:#fff;color:var(--orange-d)}
 .cta-band .btn-ghost{border-color:rgba(255,255,255,.7)}
 
-/* ---------- Life at XL — gallery slider ---------- */
-.gallery-strip{overflow:hidden;padding-bottom:48px}
-.gs-viewport{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.gs-track{display:flex;width:max-content;animation:gs-scroll 70s linear infinite}
-.gs-viewport:hover .gs-track{animation-play-state:paused}
-.gs-item{flex:0 0 auto;width:360px;height:230px;margin-right:18px;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(11,34,74,.12);background:var(--bg-soft)}
+/* ---------- Life at XL — gallery slider (same behaviour as reviews) ---------- */
+.gs-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:none}
+.gs-track::-webkit-scrollbar{display:none}
+.gs-item{flex:0 0 380px;scroll-snap-align:start;height:250px;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(11,34,74,.12);background:var(--bg-soft)}
 .gs-item img{width:100%;height:100%;object-fit:cover;display:block}
-@keyframes gs-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(max-width:640px){.gs-item{width:260px;height:168px;margin-right:12px;border-radius:12px}.gs-track{animation-duration:50s}}
-@media(prefers-reduced-motion:reduce){.gs-track{animation:none}.gs-viewport{overflow-x:auto}}
+@media(max-width:640px){.gs-item{flex:0 0 84vw;height:210px}}
 
 /* ---------- Footer ---------- */
 footer{background:var(--navy);color:#aeb8da;padding:64px 0 26px;font-size:14px}
