@@ -117,7 +117,7 @@
     <div class="foot-bottom">
       <div>© 2026 The XL Academy. All rights reserved.</div>
       <div style="display:flex;gap:18px">
-        <a href="#">Privacy Policy</a>
+        <a href="privacy-policy">Privacy Policy</a>
         <a href="#">Terms &amp; Conditions</a>
         <a href="#">Refund Policy</a>
       </div>
@@ -154,7 +154,7 @@
         <div class="field"><label>Preferred City <span class="req">*</span></label><input name="city" type="text" required placeholder="e.g. Delhi, Mumbai, Bangalore..."></div>
         <button class="btn-submit" type="submit">Submit Enquiry →</button>
         <div class="form-msg" id="formMsg"></div>
-        <p class="modal-foot">By submitting, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>. We never spam.</p>
+        <p class="modal-foot">By submitting, you agree to our <a href="privacy-policy">Terms</a> and <a href="privacy-policy">Privacy Policy</a>. We never spam.</p>
       </form>
     </div>
   </div>
