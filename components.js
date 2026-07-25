@@ -113,14 +113,6 @@
           <li>HQ: YC Co-Working Space, Dwarka Sec-13, New Delhi 110078</li>
         </ul>
       </div>
-      <div>
-        <h4>Policies</h4>
-        <ul>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-          <li><a href="cancellation-refund.html">Cancellation &amp; Refund</a></li>
-        </ul>
-      </div>
     </div>
     <div class="foot-bottom">
       <div>© 2026 The XL Academy. All rights reserved.</div>
