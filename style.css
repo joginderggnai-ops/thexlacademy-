@@ -19,8 +19,8 @@
   --container:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:112px}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 22px}
@@ -47,10 +47,9 @@ h1,h2,h3{line-height:1.18;font-weight:700;color:var(--navy)}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;height:38px;gap:18px}
 .topbar a{color:#cdd5ec}.topbar a:hover{color:#fff}
 .topbar .tb-right{display:flex;gap:20px}
-/* The header is injected into #site-header — make THAT wrapper sticky so the menu
-   stays pinned across the whole page (sticky on header.nav alone is trapped inside
-   the wrapper's height and scrolls away). */
-#site-header{position:sticky;position:-webkit-sticky;top:0;z-index:1000}
+/* Header is injected into #site-header. Fix it to the top so the menu is ALWAYS on
+   top on desktop and mobile. body has matching padding-top so content isn't hidden. */
+#site-header{position:fixed;top:0;left:0;right:0;z-index:1000}
 header.nav{position:relative;z-index:1000;background:#fff;box-shadow:0 2px 18px -10px rgba(27,43,107,.4)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center}
