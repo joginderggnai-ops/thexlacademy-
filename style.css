@@ -47,7 +47,11 @@ h1,h2,h3{line-height:1.18;font-weight:700;color:var(--navy)}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;height:38px;gap:18px}
 .topbar a{color:#cdd5ec}.topbar a:hover{color:#fff}
 .topbar .tb-right{display:flex;gap:20px}
-header.nav{position:sticky;position:-webkit-sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 18px -10px rgba(27,43,107,.4)}
+/* The header is injected into #site-header — make THAT wrapper sticky so the menu
+   stays pinned across the whole page (sticky on header.nav alone is trapped inside
+   the wrapper's height and scrolls away). */
+#site-header{position:sticky;position:-webkit-sticky;top:0;z-index:1000}
+header.nav{position:relative;z-index:1000;background:#fff;box-shadow:0 2px 18px -10px rgba(27,43,107,.4)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center}
 .logo-img{height:48px;width:auto;display:block}
@@ -372,7 +376,7 @@ footer a:hover{color:var(--orange)}
   .highlights-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
-  .menu{position:fixed;inset:74px 0 auto 0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 16px 20px;box-shadow:var(--shadow);transform:translateY(-120%);transition:.3s;max-height:calc(100vh - 74px);overflow:auto}
+  .menu{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 16px 20px;box-shadow:var(--shadow);transform:translateY(-120%);transition:.3s;max-height:calc(100vh - 120px);overflow:auto;z-index:1000}
   .menu.open{transform:translateY(0)}
   .menu>li>a{padding:14px 8px;border-bottom:1px solid var(--line)}
   .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 8px 14px;min-width:auto}
